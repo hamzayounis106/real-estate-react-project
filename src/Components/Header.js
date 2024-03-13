@@ -6,31 +6,42 @@ import { IoMdMenu } from "react-icons/io";
 
 function Header() {
   let [headerPage, setHeaderPage] = useState(false);
-  let [header_class, setHeader_class] = useState("translate-y-[-100%] ");
-
+  let [header_class, setHeader_class] = useState("translate-x-[-100%] ");
+  // changing the state of the header and translating the header
   const menuHandler = () => {
     setHeaderPage(!headerPage);
-    setHeader_class(headerPage ? "translate-y-[-100%] " : "translate-y-0 ");
+    setHeader_class(headerPage ? "translate-x-[-100%] " : "translate-x-0 ");
   };
 
   return (
     <>
-      <div className="w-full flex justify-end absolute top-0 left-0 z-10 ">
-       <Button onClick={menuHandler} value={"Menu"} icon={<IoMdMenu />} />
+      {/* Menu Button */}
+      <div className="w-full flex justify-end absolute top-0 left-0 z-[1000] ">
+        <Button onClick={menuHandler} value={"Menu"} icon={<IoMdMenu />} />
       </div>
+      {/* Header */}
       <div className="overflow-hidden  " onClick={menuHandler}>
+        {/* translating the header */}
         <motion.div
-          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-50 flex h-screen w-full absolute top-0 left-0 overflow-hidden`}
+          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-screen w-full absolute top-0 left-0 overflow-hidden`}
         >
-          <div className="  w-full h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-center bg-cover "></div>
-          <div className="  w-full h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-zinc-900 opacity-70"></div>
+          {/* left side of the header with bg image  */}
+          <div className="  w-[100%] h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
+            {/* overlay on  the left bgimage on header  */}
+            <div className="  w-full h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
+          </div>
+          {/* right side of the header  */}
+      
+
           <div
             className={`w-full h-screen absolute top-0 flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full`}
           >
-            <div className="text-white  ">
-              <h1 className="text-6xl font-semibold my-10 hover:translate-y-[-20%] transition-all duration-150 ease-in-out cursor-pointer">
-                Bunter
-              </h1>
+            <div className="text-white items-center flex justify-center flex-col ">
+            <img
+                src={"https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"}
+                alt="logo"
+                className="max-w-[240px] w-full h-auto "
+              />
               <ul className="w-full text-xl font-medium my-5 flex gap-10 bg-[#d1d5db1f] items-center justify-center px-10 rounded-md">
                 <li>Home</li>
                 <li>Services</li>

@@ -1,0 +1,164 @@
+{
+  "rentalHomesDataBase": [
+    {
+      "id": 1,
+      "address": "123 Main St",
+      "price": 1500,
+      "realtor": "John Doe",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image3.jpeg",
+        "image6.jpg",
+        "image1.jpeg",
+        "image5.jpeg",
+        "image2.jpeg"
+      ],
+      "amenities": ["Wi-Fi", "Air Conditioning"],
+      "description": "Welcome to this cozy apartment in a quiet neighborhood. Enjoy the convenience of Wi-Fi and stay comfortable with air conditioning. Whether you're lounging in the living room or preparing meals in the kitchen, you'll appreciate the modern amenities. After a long day, retreat to the bedroom for a peaceful night's sleep in the cool, conditioned air. This apartment is perfect for those who value comfort and connectivity."
+    },
+    {
+      "id": 2,
+      "address": "456 Elm St",
+      "price": 2000,
+      "realtor": "Jane Smith",
+      "location": "https://www.google.com/maps?q=34.0522,-118.2437",
+      "images": [
+        "image4.jpeg",
+        "image2.jpeg",
+        "image1.jpeg",
+        "image6.jpg",
+        "image3.jpeg"
+      ],
+      "amenities": ["TV", "Kitchen", "Free Parking on Premises"],
+      "description": "Discover this spacious house with a backyard, perfect for families and gatherings. Stay warm during chilly nights with heating, and unwind in front of the TV in the cozy living room. The fully equipped kitchen allows you to prepare delicious meals, while free parking on premises ensures convenience. Whether you're hosting a barbecue in the backyard or relaxing indoors, this house offers comfort and relaxation for all."
+    },
+    {
+      "id": 3,
+      "address": "789 Oak St",
+      "price": 1800,
+      "realtor": "Sarah Johnson",
+      "location": "https://www.google.com/maps?q=34.0522,-118.2437",
+      "amenities": ["Washer", "Dryer"],
+      "images": [
+        "image1.jpeg",
+        "image5.jpeg",
+        "image3.jpeg",
+        "image4.jpeg",
+        "image6.jpg"
+      ],
+      "description": "Experience modern living in this townhouse with a rooftop terrace. With a washer and dryer provided, you can pack light and enjoy your stay. Essentials are readily available for your convenience. Whether you're exploring the city or relaxing on the rooftop terrace, this townhouse provides everything you need for a memorable stay."
+    },
+    {
+      "id": 4,
+      "address": "321 Pine St",
+      "price": 2500,
+      "realtor": "Michael Brown",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image2.jpeg",
+        "image6.jpg",
+        "image5.jpeg",
+        "image4.jpeg",
+        "image3.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Indulge in luxury at this mansion with a swimming pool. Immerse yourself in entertainment with cable TV, perfect for cozy nights in. Whether you're lounging by the poolside or exploring the spacious interiors, this mansion offers a lavish retreat for relaxation and enjoyment."
+    },
+    {
+      "id": 5,
+      "address": "1010 Maple St",
+      "price": 1700,
+      "realtor": "Emily White",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image5.jpeg",
+        "image1.jpeg",
+        "image4.jpeg",
+        "image2.jpeg",
+        "image3.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Escape to this charming cottage with a garden view, ideal for a romantic getaway. With cable TV provided, you can unwind with your favorite shows after a day of exploring the scenic surroundings. Whether you're strolling through the garden or cozying up indoors, this cottage offers tranquility and comfort for a memorable retreat."
+    },
+    {
+      "id": 6,
+      "address": "1111 Cedar St",
+      "price": 2200,
+      "realtor": "David Lee",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image6.jpg",
+        "image2.jpeg",
+        "image1.jpeg",
+        "image3.jpeg",
+        "image4.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Embrace elegance in this duplex with a balcony, perfect for a sophisticated retreat. Start your day with breakfast on the balcony, overlooking the city skyline. With cable TV provided, you can unwind in the stylish living room after a day of exploration. Whether you're enjoying the fireplace indoors or admiring the view outdoors, this duplex offers luxury and charm for a memorable stay."
+    },
+    {
+      "id": 7,
+      "address": "1212 Birch St",
+      "price": 1900,
+      "realtor": "Olivia Martinez",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image4.jpeg",
+        "image1.jpeg",
+        "image3.jpeg",
+        "image2.jpeg",
+        "image5.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Step into this renovated apartment in a historic building, blending modern comforts with classic charm. With cable TV provided, you can relax and unwind in the cozy living room after a day of sightseeing. Whether you're exploring the vibrant neighborhood or enjoying the amenities within, this apartment offers a delightful retreat for your stay."
+    },
+    {
+      "id": 8,
+      "address": "1313 Walnut St",
+      "price": 2700,
+      "realtor": "Robert Wilson",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image3.jpeg",
+        "image5.jpeg",
+        "image6.jpg",
+        "image2.jpeg",
+        "image4.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Experience luxury living in this spectacular penthouse with breathtaking city skyline views. With cable TV provided, you can unwind in the elegant living space while enjoying the scenery. Whether you're hosting a gathering in the spacious interiors or admiring the views from the private balcony, this penthouse offers sophistication and style for an unforgettable stay."
+    },
+    {
+      "id": 9,
+      "address": "1414 Spruce St",
+      "price": 1600,
+      "realtor": "Sophia Garcia",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image1.jpeg",
+        "image2.jpeg",
+        "image6.jpg",
+        "image3.jpeg",
+        "image4.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Escape to this cozy studio with a fireplace, perfect for a romantic retreat. With cable TV provided, you can cozy up by the fire and enjoy your favorite shows. Whether you're exploring the nearby attractions or relaxing indoors, this studio offers warmth and comfort for a memorable getaway."
+    },
+    {
+      "id": 10,
+      "address": "1515 Oakwood St",
+      "price": 2100,
+      "realtor": "William Rodriguez",
+      "location": "https://www.google.com/maps?q=40.7128,-74.006",
+      "images": [
+        "image6.jpg",
+        "image5.jpeg",
+        "image1.jpeg",
+        "image4.jpeg",
+        "image2.jpeg"
+      ],
+      "amenities": ["Cable TV"],
+      "description": "Discover industrial chic design in this modern loft, offering a unique urban retreat. With cable TV provided, you can unwind in the stylish living space after a day of exploring the vibrant neighborhood. Whether you're admiring the industrial accents or enjoying the city views from the loft, this space offers contemporary elegance for a memorable stay."
+    }
+  ]
+}

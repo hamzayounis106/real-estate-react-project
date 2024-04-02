@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function Header() {
   let [headerPage, setHeaderPage] = useState(false);
@@ -31,24 +32,40 @@ function Header() {
             <div className="  w-full h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
           </div>
           {/* right side of the header  */}
-      
 
           <div
             className={`w-full h-screen absolute top-0 flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full`}
           >
             <div className="text-white items-center flex justify-center flex-col ">
-            <img
-                src={"https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"}
-                alt="logo"
-                className="max-w-[240px] w-full h-auto "
-              />
-              <ul className="w-full text-xl font-medium my-5 flex gap-10 bg-[#d1d5db1f] items-center justify-center px-10 rounded-md">
-                <li>Home</li>
-                <li>Services</li>
-                <li>Buy Home</li>
-                <li>Rent Home</li>
-                <li>About</li>
-                <li>Contact</li>
+              <Link to="/">
+               
+                <img
+                  src={
+                    "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
+                  }
+                  alt="logo"
+                  className="max-w-[240px] w-full h-auto "
+                />
+              </Link>
+              <ul className="list w-full text-xl font-medium my-5 flex gap-10 bg-[#d1d5db1f] items-center justify-center px-10 rounded-md">
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/Services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/Buy">Buy</Link>
+                </li>
+                <li>
+                  <Link to="/Rent">Rent</Link>
+                </li>
+                <li>
+                  <Link to="/About">About</Link>
+                </li>
+                <li>
+                  <Link to="/Contact">Contact</Link>
+                </li>
               </ul>
             </div>
             <motion.div

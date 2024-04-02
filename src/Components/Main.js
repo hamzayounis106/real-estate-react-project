@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Main() {
   return (
     <>
@@ -29,12 +29,12 @@ function Main() {
               lifestyle and preferences. Start your journey with BUNTERS today!
             </p>
             <div className="flex justify-center gap-9 mt-4">
-              <button className="text-[18px] font-[400] text-[#f1f0f0] hover:bg-[#9720209a] hover:translate-y-2 transition-transform duration-500 ease bg-[#972020] px-8 py-1 pb-[5px] rounded-[7px]">
+              <Link to="/Buy" className="text-[18px] font-[400] text-[#f1f0f0] hover:bg-[#9720209a] hover:translate-y-2 transition-transform duration-500 ease bg-[#972020] px-8 py-1 pb-[5px] rounded-[7px]">
                 Buy Home
-              </button>
-              <button className="text-[18px] font-[400] text-zinc-950 hover:bg-[#ffffffad] hover:translate-y-2 transition-transform duration-500 ease bg-white px-8 py-1 pb-[5px] rounded-[7px]">
+              </Link>
+              <Link to="/Rent" className="text-[18px] font-[400] text-zinc-950 hover:bg-[#ffffffad] hover:translate-y-2 transition-transform duration-500 ease bg-white px-8 py-1 pb-[5px] rounded-[7px]">
                 Rent Home
-              </button>
+              </Link>
             </div>
           </div>
         </div>

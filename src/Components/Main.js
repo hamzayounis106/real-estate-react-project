@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 function Main() {
   return (
     <>
@@ -36,6 +37,7 @@ function Main() {
                 Rent Home
               </Link>
             </div>
+          
           </div>
         </div>
       </div>

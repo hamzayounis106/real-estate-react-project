@@ -13,7 +13,7 @@
         "image5.jpeg",
         "image2.jpeg"
       ],
-      "amenities": ["Wi-Fi", "Air Conditioning"],
+      "amenities": ["Wi-Fi", "Air Conditioning", "Heating"],
       "description": "Welcome to this cozy apartment in a quiet neighborhood. Enjoy the convenience of Wi-Fi and stay comfortable with air conditioning. Whether you're lounging in the living room or preparing meals in the kitchen, you'll appreciate the modern amenities. After a long day, retreat to the bedroom for a peaceful night's sleep in the cool, conditioned air. This apartment is perfect for those who value comfort and connectivity."
     },
     {
@@ -61,7 +61,7 @@
         "image4.jpeg",
         "image3.jpeg"
       ],
-      "amenities": ["Cable TV"],
+      "amenities": ["Cable TV", "Essentials"],
       "description": "Indulge in luxury at this mansion with a swimming pool. Immerse yourself in entertainment with cable TV, perfect for cozy nights in. Whether you're lounging by the poolside or exploring the spacious interiors, this mansion offers a lavish retreat for relaxation and enjoyment."
     },
     {
@@ -77,7 +77,7 @@
         "image2.jpeg",
         "image3.jpeg"
       ],
-      "amenities": ["Cable TV"],
+      "amenities": ["Cable TV", "Essentials",   "Free Parking on Premises"],
       "description": "Escape to this charming cottage with a garden view, ideal for a romantic getaway. With cable TV provided, you can unwind with your favorite shows after a day of exploring the scenic surroundings. Whether you're strolling through the garden or cozying up indoors, this cottage offers tranquility and comfort for a memorable retreat."
     },
     {
@@ -93,7 +93,7 @@
         "image3.jpeg",
         "image4.jpeg"
       ],
-      "amenities": ["Cable TV"],
+      "amenities": ["Cable TV", "Kitchen"],
       "description": "Embrace elegance in this duplex with a balcony, perfect for a sophisticated retreat. Start your day with breakfast on the balcony, overlooking the city skyline. With cable TV provided, you can unwind in the stylish living room after a day of exploration. Whether you're enjoying the fireplace indoors or admiring the view outdoors, this duplex offers luxury and charm for a memorable stay."
     },
     {
@@ -109,7 +109,7 @@
         "image2.jpeg",
         "image5.jpeg"
       ],
-      "amenities": ["Cable TV"],
+      "amenities": ["Cable TV", "Kitchen",   "Free Parking on Premises"],
       "description": "Step into this renovated apartment in a historic building, blending modern comforts with classic charm. With cable TV provided, you can relax and unwind in the cozy living room after a day of sightseeing. Whether you're exploring the vibrant neighborhood or enjoying the amenities within, this apartment offers a delightful retreat for your stay."
     },
     {

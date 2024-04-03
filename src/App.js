@@ -6,6 +6,7 @@ import Rent from "./Components/Rent";
 import Details from "./Components/Details";
 import ComponentB from "./Components/ComponentB";
 import { Routes, Route } from "react-router-dom";
+// import Slider from "./Components/Slider";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Rent" element={<Rent />} />
       </Routes>
+      {/* <Slider /> */}
     </>
   );
 }

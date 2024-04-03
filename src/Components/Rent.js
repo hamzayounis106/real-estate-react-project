@@ -7,11 +7,34 @@ import SidePati from "./SidePati";
 import { Link } from "react-router-dom";
 import Checkbox from "./SidebarComponents/Checkbox";
 import Card from "./Card";
+import Slider from "react-slider";
 import "../index.css";
 import rentalHomesData from "../db/RentalHomes.json";
 
 function Rent() {
+  // (-__-)  (.__.)  (._.)  (,_,)  (._.)  (.__.) ༼ つ ◕_◕ ༽つ
+  const min = 0;
+  const max = 10000;
+  //State to store the rental homes data
   const [rentalHomes, setRentalHomes] = useState([]);
+
+  //State to store the values of the range slider
+  const [values, setValues] = useState([min, max]);
+
+  //State to show the range slider values
+  const [range, showRange] = useState(false);
+
+  //State to store the selected amenities
+  const [selectedAmenities, setselectedAmenities] = useState([]);
+
+  // handlechange function to set the values of the range slider and show the slected values on the filter panal by make the showRange true
+
+  const handleChange = (newValues) => {
+    setValues(newValues);
+    showRange(true);
+  };
+
+  //Setting the rental homes data from the json file
 
   useEffect(() => {
     if (
@@ -19,15 +42,52 @@ function Rent() {
       rentalHomesData.rentalHomesDataBase.length > 0
     ) {
       setRentalHomes(rentalHomesData.rentalHomesDataBase);
-      console.log(rentalHomesData.rentalHomesDataBase);
+      // console.log(rentalHomesData.rentalHomesDataBase);
     }
   }, [rentalHomesData.rentalHomesDataBase]);
 
-  const handlecheck = (e) => {
-    if (e.target.checked) {
-      console.log(e.target.value);
+  //Handling the check of the amenities
+
+  var handlecheck = (e) => {
+    if (selectedAmenities.includes(e.target.value)) {
+      //remove the value from the array
+      setselectedAmenities(
+        selectedAmenities.filter((item) => item !== e.target.value)
+      );
+    } else {
+      setselectedAmenities((selectedAmenities) => [
+        ...selectedAmenities,
+        e.target.value,
+      ]);
     }
   };
+
+  //Filtering out the data on the basis of selected amenities and price range
+  //if the selected amenities are empty then it will show all the rental homes because handlecheck makes the selectedAmenities empty and then below filterdData is set (will run again due to useffect dependent on selectedAmenities ) to setRentalHomes because if  if (selectedAmenities.length > 0)  is not called then it will show all the rental homes
+
+  useEffect(() => {
+    let filteredData = rentalHomesData.rentalHomesDataBase;
+
+    // Apply filter based on selected amenities
+    if (selectedAmenities.length > 0) {
+      filteredData = filteredData.filter((item) =>
+        selectedAmenities.some((amenity) => item.amenities.includes(amenity))
+      );
+    }
+
+    // Apply filter based on price range
+    if (range) {
+      filteredData = filteredData.filter(
+        (item) => item.price < values[1] && item.price > values[0]
+      );
+    }
+
+    // Set the filtered data as the rental homes
+    setRentalHomes(filteredData);
+  }, [selectedAmenities, values]);
+
+  // List of Amenties that we have in our rental homes
+
   const amenitiesList = [
     "Wi-Fi",
     "Air Conditioning",
@@ -72,7 +132,7 @@ function Rent() {
           <SidePati text={"Flexible lease options"} icon={<FaFileContract />} />
         </div>
       </div>
-      <div className="card_wrapper w-[100%] flex justify-center items-start ">
+      <div className="card_wrapper w-[100%] flex justify-start items-start ">
         <div className=" w-[20%] m-2 rounded-lg bg-[#0A1033]  flex justify-center items-center p-5  flex-wrap break-words ">
           <div className="break-words w-screen ">
             <h2 className="text-2xl font-semibold text-white text-center">
@@ -93,6 +153,30 @@ function Rent() {
                   />
                 );
               })}
+            </div>
+            <h2 className="text-1xl font-semibold text-white ">
+              Rent Prce Range
+            </h2>
+            <div className="w-[90%] text-white">
+              <Slider
+                className="slider"
+                value={values}
+                onChange={handleChange}
+                min={min}
+                max={max}
+              />
+            </div>
+            <div className="mt-3">
+              {range ? (
+                <>
+                  <p className="text-white pl-2 font-light ">
+                    Min: {values[0]}
+                  </p>
+                  <p className="text-white pl-2 font-light ">
+                    Max: {values[1]}
+                  </p>
+                </>
+              ) : null}
             </div>
           </div>
         </div>

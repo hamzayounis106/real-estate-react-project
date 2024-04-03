@@ -23,8 +23,8 @@ import { BiSolidDryer } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
 export default function App() {
   const { state } = useLocation();
-  console.log(state);
-  console.log(state.amenitiesP);
+  // console.log(state);
+  // console.log(state.amenitiesP);
   if (!state) {
     console.log("Some issue");
   }

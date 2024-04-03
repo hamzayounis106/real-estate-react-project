@@ -72,3 +72,27 @@ ul li {
   color: #fff;
   background-color: #0A1033;
 }
+/* Styles for the slider component */
+.slider {
+  height: 10px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Styles for the slider thumb */
+.slider .thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #007bff;
+  cursor: grab;
+  margin-top: -6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the slider active state */
+.slider .thumb.active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

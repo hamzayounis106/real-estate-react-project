@@ -13,7 +13,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaHome } from "react-icons/fa";
 import { FaClipboardUser } from "react-icons/fa6";
 function Card(props) {
-  console.log(props.amenities);
+  // console.log(props.amenities);
   return (
     <>
       <div className=" hover:translate-y-1 transition-all  ease-in-out    bg-[#0A1033]  rounded-lg m-3 overflow-hidden  h-[400px]   w-[300px] relative">

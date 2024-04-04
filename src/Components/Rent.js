@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Checkbox from "./SidebarComponents/Checkbox";
 import Card from "./Card";
 import Slider from "react-slider";
+import Sorter from "../Sorter";
 import "../index.css";
 import rentalHomesData from "../db/RentalHomes.json";
 
@@ -27,6 +28,15 @@ function Rent() {
   //State to store the selected amenities
   const [selectedAmenities, setselectedAmenities] = useState([]);
 
+  //State to count the number of lists
+  const [count, setCount] = useState(0);
+
+  //Sorting the List
+  const [sortState, SetSortState] = useState("Latest");
+  const handleSort = (newSortState) => {
+    SetSortState(newSortState);
+  };
+
   // handlechange function to set the values of the range slider and show the slected values on the filter panal by make the showRange true
 
   const handleChange = (newValues) => {
@@ -41,6 +51,7 @@ function Rent() {
       rentalHomesData.rentalHomesDataBase &&
       rentalHomesData.rentalHomesDataBase.length > 0
     ) {
+      setCount(rentalHomesData.rentalHomesDataBase.length);
       setRentalHomes(rentalHomesData.rentalHomesDataBase);
       // console.log(rentalHomesData.rentalHomesDataBase);
     }
@@ -68,6 +79,16 @@ function Rent() {
   useEffect(() => {
     let filteredData = rentalHomesData.rentalHomesDataBase;
 
+    if (sortState === "Min to Max") {
+      filteredData = [...filteredData].sort((a, b) => a.price - b.price); // Sort the new array reference
+      console.log("Min to Max");
+      console.log(filteredData);
+    } else if (sortState === "Max to Min") {
+      filteredData = [...filteredData].sort((a, b) => b.price - a.price); // Sort the new array reference
+      console.log("Max to min");
+      console.log(filteredData);
+    }
+   
     // Apply filter based on selected amenities
     if (selectedAmenities.length > 0) {
       filteredData = filteredData.filter((item) =>
@@ -82,9 +103,9 @@ function Rent() {
       );
     }
 
-    // Set the filtered data as the rental homes
-    setRentalHomes(filteredData);
-  }, [selectedAmenities, values]);
+    setCount(filteredData.length);
+    setRentalHomes(filteredData); // Set the filtered and sorted data
+  }, [selectedAmenities, values, sortState]);
 
   // List of Amenties that we have in our rental homes
 
@@ -133,7 +154,7 @@ function Rent() {
         </div>
       </div>
       <div className="card_wrapper w-[100%] flex justify-start items-start ">
-        <div className=" w-[20%] m-2 rounded-lg bg-[#0A1033]  flex justify-center items-center p-5  flex-wrap break-words ">
+        <div className=" w-[20%] m-2 my-4 rounded-lg bg-[#0A1033]  flex justify-center items-center p-5  flex-wrap break-words ">
           <div className="break-words w-screen ">
             <h2 className="text-2xl font-semibold text-white text-center">
               Filters
@@ -178,25 +199,50 @@ function Rent() {
                 </>
               ) : null}
             </div>
+         
           </div>
         </div>
 
-        <div className="flex justify-center items-center  flex-wrap  width-[75%] my-4">
-          {rentalHomes.map((data, index) => {
-            return (
-              <Card
-                location={data.location}
-                description={data.description}
-                realtor={data.realtor}
-                price={"$" + data.price + "/month"}
-                details={data.description}
-                address={data.address}
-                key={index}
-                images={data.images}
-                amenities={data.amenities}
-              />
-            );
-          })}
+        <div className="flex justify-center items-center flex-col flex-wrap  w-[75%] my-4">
+          <div className="text-[#0A1033] pl-2 text-1xl font-light text-right w-[100%]">
+            Total Availiable : {count}
+            <div div className="container">
+              <div className="tabs">
+                <Sorter
+                  id="tab1"
+                  title="Latest"
+                  onChange={() => handleSort("Latest")}
+                />
+                <Sorter
+                  id="tab2"
+                  title="Min to Max"
+                  onChange={() => handleSort("Min to Max")}
+                />
+                <Sorter
+                  id="tab3"
+                  title="Max to Min"
+                  onChange={() => handleSort("Max to Min")}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center items-center  flex-wrap  w-[100%] my-4">
+            {rentalHomes.map((data, index) => {
+              return (
+                <Card
+                  location={data.location}
+                  description={data.description}
+                  realtor={data.realtor}
+                  price={"$" + data.price + "/month"}
+                  details={data.description}
+                  address={data.address}
+                  key={index}
+                  images={data.images}
+                  amenities={data.amenities}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

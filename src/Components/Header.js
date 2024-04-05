@@ -21,33 +21,32 @@ function Header() {
         <Button onClick={menuHandler} value={"Menu"} icon={<IoMdMenu />} />
       </div>
       {/* Header */}
-      <div className="overflow-hidden  " onClick={menuHandler}>
+      <div className="overflow-hidden  " onClick={menuHandler} >
         {/* translating the header */}
         <motion.div
-          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-screen w-full absolute top-0 left-0 overflow-hidden`}
+          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-[100%] sm:h-screen w-full absolute top-0 left-0 overflow-hidden`}
         >
           {/* left side of the header with bg image  */}
-          <div className="  w-[100%] h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
+          <div className="  w-[100%] h-[100%] sm:h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
             {/* overlay on  the left bgimage on header  */}
-            <div className="  w-full h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
+            <div className="  w-full h-[100%] sm:h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
           </div>
           {/* right side of the header  */}
 
           <div
-            className={`w-full h-screen absolute top-0 flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full`}
+            className={`w-full h-[100%] sm:h-screen absolute top-0 flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full`}
           >
             <div className="text-white items-center flex justify-center flex-col ">
               <Link to="/">
-               
                 <img
                   src={
                     "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
                   }
                   alt="logo"
-                  className="max-w-[240px] w-full h-auto "
+                  className=" max-w-[150px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-[240px] w-full h-auto "
                 />
               </Link>
-              <ul className="list w-full text-xl font-medium my-5 flex gap-10 bg-[#d1d5db1f] items-center justify-center px-10 rounded-md">
+              <ul className="list w-[80%] sm:w-full  sm:flex-row min_  text-[12px] sm:text-[15px] lg:text-xl font-medium my-5 flex sm:gap-4 md:gap-10 bg-[#d1d5db1f] items-center justify-center px-4 py-2 sm:px-10 rounded-md sm:flex-nowrap flex-wrap ">
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -75,7 +74,7 @@ function Header() {
                 rotate: -90,
                 borderRadius: "50%",
               }}
-              className="flex items-center justify-center w-14 h-10 bg-[#d1d5db1f] cursor-pointer text-white border-gray-800 rounded-full text-xl mt-4"
+              className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 md:w-14 md:h-10 bg-[#d1d5db1f] cursor-pointer text-white border-gray-800 rounded-full text-xl mt-4"
             >
               <AiOutlineClose onClick={menuHandler} />
             </motion.div>

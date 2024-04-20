@@ -9,6 +9,7 @@ import Checkbox from "./SidebarComponents/Checkbox";
 import Card from "./Card";
 import Slider from "react-slider";
 import Sorter from "../Sorter";
+import CloseButton from "./CloseButton";
 import "../index.css";
 import rentalHomesData from "../db/RentalHomes.json";
 
@@ -31,10 +32,33 @@ function Rent() {
   //State to count the number of lists
   const [count, setCount] = useState(0);
 
+  //State to store the filtervisisbility for mobile
+  const [filterVisibility, setFilterVisibility] = useState(false);
+  const [filterVisibilityClass, setFilterVisibilityClass] = useState(
+    "translate-x-[-170%] absolute"
+  );
+
   //Sorting the List
   const [sortState, SetSortState] = useState("Latest");
   const handleSort = (newSortState) => {
     SetSortState(newSortState);
+  };
+
+  //Handling the filter visibility for mobile
+
+  const handleFilterVisibility = () => {
+    if (filterVisibility) {
+      setFilterVisibilityClass("translate-x-[-170%] absolute");
+      console.log("No");
+    } else {
+      setFilterVisibilityClass("translate-x-[0] absolute");
+      console.log("yes");
+    }
+    setFilterVisibility(!filterVisibility);
+    // let filterer = document.getElementById("filterer");
+    // filterer.classList.toggle("translate-x-[-100%]");
+    // console.log(filterVisibility);
+    // console.log(filterer);
   };
 
   // handlechange function to set the values of the range slider and show the slected values on the filter panal by make the showRange true
@@ -127,15 +151,15 @@ function Rent() {
         <div className="  w-full h-[100vh]  absolute top-0 flex flex-wrap justify-between items-center text-center  bg-center bg-cover bg-[#030528] opacity-75 z-[190]"></div>
         {/* <div className=" w-[7%]"></div> */}
         <div className="text-white w-[87%] xs:w-[50%] sm:h-[100vh]  z-[200] flex justify-center flex-col items-center xs:items-start xs:ml-[5%]">
-        <Link to="/">
-                <img
-                  src={
-                    "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-                  }
-                  alt="logo"
-                  className=" xs:hidden max-w-[150px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-[240px] w-full h-auto "
-                />
-              </Link>
+          <Link to="/">
+            <img
+              src={
+                "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
+              }
+              alt="logo"
+              className=" xs:hidden max-w-[150px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-[240px] w-full h-auto "
+            />
+          </Link>
           <h2 className="lg:text-3xl xl:text-5xl font-semibold my-4 capitalize">
             Looking for a home to Rent?
           </h2>
@@ -162,15 +186,24 @@ function Rent() {
           <SidePati text={"Flexible lease options"} icon={<FaFileContract />} />
         </div>
       </div>
-      {/* <div className="card_wrapper w-[100%] flex justify-start items-start ">
-        <div className=" w-[20%] m-2 my-4 rounded-lg bg-[#0A1033]  flex justify-center items-center p-5  flex-wrap break-words ">
-          <div className="break-words w-screen ">
+      <div className="card_wrapper w-[100%] flex justify-start lg:items-start lg:flex-row flex-col items-center">
+        <div
+          onClick={handleFilterVisibility}
+          className={`transition-all duration-100 ease-in-out !fixed top-0 ${filterVisibilityClass}  md:translate-x-0 bg-[#030528] opacity-50  w-full h-full z-[200] md:hidden`}
+        ></div>
+        <div
+          id="filterer"
+          className={`transition-all duration-300 ease-in-out  ${filterVisibilityClass} md:translate-x-0   md:w-[90%] lg:w-[20%] sm:w-[50vw] w-[80vw]  md:my-9  m-2 my-14 lg:my-4 rounded-lg bg-[#0A1033]  md:relative z-[200] flex md:justify-center md:items-center p-5  flex-wrap break-words shadow-2xl shadow-black `}
+        >
+          <div className="break-words w-full lg:justify-normal lg:block justify-normal block md:flex md:justify-center md:flex-col ">
             <h2 className="text-2xl font-semibold text-white text-center">
               Filters
             </h2>
             <div className="bg-zinc-400 py-[1px] my-1"></div>
-            <h2 className="text-1xl font-semibold text-white ">Amenities</h2>
-            <div className="flex flex-col gap-2 p-3">
+            <h2 className="text-1xl font-semibold text-white text-start inline-block ">
+              Amenities
+            </h2>
+            <div className="flex flex-col lg:flex-col  md:flex-row gap-2 p-3 md:flex-wrap md:justify-center">
               {amenitiesList.map((e, index) => {
                 return (
                   <Checkbox
@@ -187,7 +220,7 @@ function Rent() {
             <h2 className="text-1xl font-semibold text-white ">
               Rent Prce Range
             </h2>
-            <div className="w-[90%] text-white">
+            <div className=" md:w-full lg:w-[90%] text-white ">
               <Slider
                 className="slider"
                 value={values}
@@ -202,37 +235,60 @@ function Rent() {
                   <p className="text-white pl-2 font-light ">
                     Min: {values[0]}
                   </p>
-                  <p className="text-white pl-2 font-light ">
+                  <p className="text-white pl-2 font-light  ">
                     Max: {values[1]}
                   </p>
                 </>
               ) : null}
             </div>
-         
+            <CloseButton text="Close Filters" ClickhandleChange={handleFilterVisibility}  href="#top_list" classes="text-white md:hidden close_button scale-75" />
+            {/* <button
+             
+              className="text-white md:hidden"
+              onClick={handleFilterVisibility}
+            >
+              Close
+            </button> */}
           </div>
         </div>
 
-        <div className="flex justify-center items-center flex-col flex-wrap  w-[75%] my-4">
-          <div className="text-[#0A1033] pl-2 text-1xl font-light text-right w-[100%]">
+        <div
+          id="top_list"
+          className="flex justify-center items-center flex-col flex-wrap md:w-[90%] lg:w-[75%] my-4"
+        >
+          <div className="text-[#0A1033] px-2 text-1xl font-light text-center md:text-right w-[100%] py-2">
             Total Availiable : {count}
-            <div div className="container">
-              <div className="tabs">
-                <Sorter
-                  id="tab1"
-                  title="Latest"
-                  onChange={() => handleSort("Latest")}
-                />
-                <Sorter
-                  id="tab2"
-                  title="Min to Max"
-                  onChange={() => handleSort("Min to Max")}
-                />
-                <Sorter
-                  id="tab3"
-                  title="Max to Min"
-                  onChange={() => handleSort("Max to Min")}
-                />
+            <div className=" flex  justify-center flex-col w-full items-center ">
+              <div className="container py-8 md:py-2">
+                <div className="tabs">
+                  <Sorter
+                    id="tab1"
+                    title="Latest"
+                    onChange={() => handleSort("Latest")}
+                  />
+                  <Sorter
+                    id="tab2"
+                    title="Min to Max"
+                    onChange={() => handleSort("Min to Max")}
+                  />
+                  <Sorter
+                    id="tab3"
+                    title="Max to Min"
+                    onChange={() => handleSort("Max to Min")}
+                  />
+                </div>
               </div>
+              <button
+                onClick={handleFilterVisibility}
+                title="filter"
+                href="#filterer"
+                className="filter mt-2 md:hidden"
+              >
+                <svg viewBox="0 0 512 512" height="1em">
+                  <path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path>
+                </svg>
+                <p>Filters</p>
+              </button>
             </div>
           </div>
           <div className="flex justify-center items-center  flex-wrap  w-[100%] my-4">
@@ -253,7 +309,7 @@ function Rent() {
             })}
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

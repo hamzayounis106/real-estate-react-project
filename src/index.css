@@ -165,9 +165,89 @@ ul li {
   transition: 0.25s ease-out;
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .tabs {
     transform: scale(0.6);
   }
+} */
+
+
+.filter {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  gap:5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.192);
+  cursor: pointer;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15),
+  0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  transition: all 0.3s;
 }
 
+.filter svg {
+  height: 16px;
+  fill: rgb(77, 77, 77);
+  transition: all 0.3s;
+}
+.filter:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.11);
+  background-color: rgb(59, 59, 59);
+
+}
+.filter:hover svg {
+  fill: white;
+}
+.filter:hover p{
+color:#fff;
+}
+
+
+.split_heading{
+  filter: drop-shadow(4px 4px 10px black);
+}
+.splitting .char {
+	animation: slide-in .75s cubic-bezier(.5, 0, .5, 1) both;
+	animation-delay: calc(.25s + (120ms * var(--char-index)));
+}
+
+@keyframes slide-in {
+	from {
+	transform: translateX(-3em) translateY(-1.5em) rotate(-135deg) scale(0.5);
+	opacity: 0;
+	}
+}
+
+.close_button {
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+  border-radius: 20px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 17px;
+  padding: 0.6em 1.5em;
+ }
+ 
+ .close_button:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+ }
+ 
+ @keyframes pulse512 {
+  0% {
+   box-shadow: 0 0 0 0 #05bada66;
+  }
+ 
+  70% {
+   box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+ 
+  100% {
+   box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+ }

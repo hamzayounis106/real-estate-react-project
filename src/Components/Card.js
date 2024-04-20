@@ -16,7 +16,7 @@ function Card(props) {
   // console.log(props.amenities);
   return (
     <>
-      <div className=" hover:translate-y-1 transition-all  ease-in-out    bg-[#0A1033]  rounded-lg m-3 overflow-hidden  h-[400px]   w-[300px] relative">
+      <div className=" hover:scale-95 transition-all  ease-in-out duration-150   bg-[#0A1033]  rounded-lg m-3 overflow-hidden  h-[400px]   w-[300px] relative shadow-lg shadow-slate-500  ">
         <div>
           <Swiper
             spaceBetween={30}
@@ -30,18 +30,19 @@ function Card(props) {
             }}
             modules={[Autoplay, Pagination]}
             className="mySwiper cursor-grab bg-[#0A1033] rounded-md"
-            
           >
             {props.images.map((data, index) => {
               return (
-                <SwiperSlide key={index} className="bg-[#0A1033]" >
-                  <div className=" bg-[#0A1033] flex  justify-center items-center w-[100%] overflow-hidden rounded-md" >
-                    <img  className="w-[90%]  !h-[11rem] rounded-md " src={`./Images/${data}`} />
+                <SwiperSlide key={index} className="bg-[#0A1033]">
+                  <div className=" bg-[#0A1033] flex  justify-center items-center w-[100%] overflow-hidden rounded-md">
+                    <img
+                      className="w-[90%]  !h-[11rem] rounded-md "
+                      src={`./Images/${data}`}
+                    />
                   </div>
                 </SwiperSlide>
               );
             })}
-            
           </Swiper>
         </div>
         <div className=" cursor-pointer absolute   bottom-[10px] right-0 left-0 flex flex-col  gap-3 overflow-hidden  p-2">
@@ -68,7 +69,7 @@ function Card(props) {
             <a href={props.location} target="_blank">
               <FaLocationDot
                 title="Visit Location"
-                className="cursor-pointer icons text-white text-2xl font-bold"
+                className="cursor-pointer icons text-white text-2xl font-bold "
               />
             </a>
             <Link
@@ -85,7 +86,7 @@ function Card(props) {
             >
               <FaHome
                 title="Details"
-                className="cursor-pointer icons text-white text-2xl font-bold"
+                className="  cursor-pointer icons text-white text-2xl font-bold"
               />
             </Link>
           </div>

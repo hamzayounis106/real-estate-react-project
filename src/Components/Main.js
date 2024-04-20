@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Main() {
+
   return (
     <>
       <div className="flex items-center w-full h-[100%] sm:h-screen absolute top-0 left-0">
@@ -28,7 +29,7 @@ function Main() {
           <div>
 
          
-            <h2 className="lg:text-4xl md:text-[1.8rem] font-bold text-[#ffffff] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]">
+            <h2 data-splitting className="split_heading lg:text-4xl md:text-[1.8rem] font-bold text-[#ffffff] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]">
               Find Your Dream Home
             </h2>
             <p className="lg:text-2xl sm:text-xl text-[1.2rem] font-light text-[#c7d3e2] text-center ">

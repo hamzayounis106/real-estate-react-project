@@ -53,7 +53,7 @@ function Services() {
                 <img
                   alt=""
                   className="w-[100%] rounded-md "
-                  src={`./Images/Service_Banner_images/1.png`}
+                  src={`./Images/Service_Banner_images/1.webp`}
                 />
               </div>
             </SwiperSlide>
@@ -62,7 +62,7 @@ function Services() {
                 <img
                   alt=""
                   className="w-[100%] rounded-md "
-                  src={`./Images/Service_Banner_images/2.png`}
+                  src={`./Images/Service_Banner_images/2.webp`}
                 />
               </div>
             </SwiperSlide>
@@ -71,7 +71,7 @@ function Services() {
                 <img
                   alt=""
                   className="w-[100%] rounded-md "
-                  src={`./Images/Service_Banner_images/3.png`}
+                  src={`./Images/Service_Banner_images/3.webp`}
                 />
               </div>
             </SwiperSlide>
@@ -80,7 +80,7 @@ function Services() {
                 <img
                   alt=""
                   className="w-[100%] rounded-md "
-                  src={`./Images/Service_Banner_images/4.png`}
+                  src={`./Images/Service_Banner_images/4.webp`}
                 />
               </div>
             </SwiperSlide>
@@ -105,7 +105,8 @@ function Services() {
       </div>
 
       <SingleServiceComponent
-        video_name="Plumber_bg_video.mp4"
+      id="Plumbing"
+        video_name="Plumber_bg_video.webm"
         F_heading="Professional Plumbing Solutions"
         F_description="Experience reliable plumbing services tailored to your needs.
                 From leak repairs to installations, our skilled plumbers ensure
@@ -122,10 +123,10 @@ function Services() {
                 to deliver reliable service that exceeds your expectations,
                 ensuring that your home's plumbing works perfectly when you need
                 it most."
-        image_name="plumber_fixed_bgimage.jpg"
+        image_name="plumber_fixed_bgimage.webp"
       />
-      <SingleServiceComponent
-        video_name="Electician_bg_video.mp4"
+      <SingleServiceComponent  id="Electrician"
+        video_name="Electician_bg_video.webm"
         F_heading="Expert Electrical Services: Keeping Your Home Powered Safely"
         F_description="Ensure the safety and functionality of your home's electrical systems
     with our expert electrical services. From wiring installations to
@@ -137,11 +138,11 @@ function Services() {
     new outlets, upgrading circuits, or diagnosing electrical issues, we
     deliver quality service tailored to your requirements, ensuring your
     home's electrical systems operate flawlessly."
-        image_name="electrician_image.jpg"
+        image_name="electrician_image.webp"
       />
 
-      <SingleServiceComponent
-        video_name="wallpaint_bg_video.mp4"
+      <SingleServiceComponent  id="Wall_Painting"
+        video_name="wallpaint_bg_video.webm"
         F_heading="Expert Wall Painting Services: Transform Your Home with Vibrant Colors"
         F_description="Transform your living spaces with our expert wall painting services.
     Our skilled painters bring creativity and precision to every project,
@@ -154,11 +155,11 @@ function Services() {
     painters ensure flawless results that exceed your expectations. With
     attention to detail and quality craftsmanship, we bring your vision
     to life, enhancing your home's aesthetic appeal."
-        image_name="wallpaint_image.jpg"
+        image_name="wallpaint_image.webp"
       />
 
-      <SingleServiceComponent
-        video_name="transport_bg_video.mp4"
+      <SingleServiceComponent id="Transport"
+        video_name="transport_bg_video.webm"
         F_heading="Reliable Transportation Services: Safely Moving Your Belongings"
         F_description="Experience stress-free moving with our reliable transportation services.
     Our experienced transporters handle your belongings with care, ensuring
@@ -171,11 +172,11 @@ function Services() {
     team handles every aspect of your move with professionalism and expertise.
     With a focus on efficiency and customer satisfaction, we make moving
     easy and convenient, allowing you to settle into your new home seamlessly."
-        image_name="transport_image.jpg"
+        image_name="transport_image.webp"
       />
 
-      <SingleServiceComponent
-        video_name="internet_bg_video.mp4"
+      <SingleServiceComponent  id="Internet"
+        video_name="internet_bg_video.webm"
         F_heading="Reliable Internet Services: Keeping You Connected Anywhere"
         F_description="Stay connected with reliable internet services tailored to your needs.
     Whether it's for work, entertainment, or communication, our internet
@@ -187,7 +188,7 @@ function Services() {
     internet services that meet the demands of modern digital living. From
     broadband to fiber-optic, we offer a range of options to suit your
     browsing, streaming, and gaming needs."
-        image_name="Internet_fixed_bgimage.jpg"
+        image_name="Internet_fixed_bgimage.webp"
       />
 
       <div className="relative w-full flex justify-center items-center my-20 ">

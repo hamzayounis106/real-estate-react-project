@@ -93,19 +93,19 @@ function Footer() {
             <SplitText text="Discover your ideal rental home today! Your dream rental awaits. " />
           </p>
           <ul className=" flex px-2 text-[18px] lg:text-[1.4rem] font-medium my-2  gap-1  items-center justify-center  rounded-md text-white sm:text-2xl sm:gap-2  ">
-            <a className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all">
+            <a href="#" className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all">
               <PiInstagramLogoFill />
             </a>
-            <a className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
+            <a href="#" className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
               <PiFacebookLogoFill />
             </a>
-            <a className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
+            <a href="#" className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
               <PiTwitterLogoFill />
             </a>
-            <a className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
+            <a href="#" className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
               <PiYoutubeLogoFill />
             </a>
-            <a className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
+            <a href="#" className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all ">
               <PiLinkedinLogoFill />
             </a>
           </ul>

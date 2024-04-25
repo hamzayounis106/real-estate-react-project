@@ -36,14 +36,14 @@ ul li {
 .bg_image_header,
 .ng {
   /* background-image: url("./Assets/header_bg_image.jpeg"); */
-  background-image: url("./Assets/luxry_bg_image.jpg");
+  background-image: url("./Assets/luxry_bg_image.webp");
 }
 .bg_image_rent {
   background-image: url("./Assets/header_bg_image.jpeg");
   background-image: url("https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 }
 .bg_image_buy {
-  background-image: url("./Assets/header_bg.jpeg");
+  background-image: url("./Assets/header_bg.webp");
 }
 .rounded-l-full {
   border-top-left-radius: 9999px;
@@ -53,12 +53,12 @@ ul li {
   color: #000 !important;
   width: 12px !important;
 }
-.cards_overflow {
+/* .cards_overflow { */
   /* scrollbar-width: 0px; */
-}
-.cards_overflow::-webkit-scrollbar {
+/* } */
+/* .cards_overflow::-webkit-scrollbar { */
   /* display: none; */
-}
+/* } */
 .lable_filter::selection {
   color: #fff;
   background-color: #0a1033;

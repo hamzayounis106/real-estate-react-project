@@ -5,7 +5,7 @@ import "../Components/serviceStyle.css";
 function SingleServiceComponent(props) {
   return (
     <>
-      <div className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen  top-10 left-0">
+      <div id={props.id} className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen  top-10 left-0">
         <div className="    md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  bg-center bg-cover   md:flex flex-col justify-evenly items-center ">
       <img src={`./Images/${props.image_name}`} alt="" />
         </div>

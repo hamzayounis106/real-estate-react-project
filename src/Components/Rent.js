@@ -12,8 +12,11 @@ import Sorter from "../Sorter";
 import CloseButton from "./CloseButton";
 import "../index.css";
 import rentalHomesData from "../db/RentalHomes.json";
-
+import { gsap } from "gsap";
+import SplitText from "./SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 function Rent() {
+  gsap.registerPlugin(ScrollTrigger);
   // (-__-)  (.__.)  (._.)  (,_,)  (._.)  (.__.) ༼ つ ◕_◕ ༽つ
   const min = 0;
   const max = 10000;
@@ -145,9 +148,87 @@ function Rent() {
     "Essentials",
     "Cable TV",
   ];
+  useEffect(() => {
+    let tl = gsap.timeline();
+    tl.from(".myHeading1 .char", {
+      duration: 0.2,
+      x: 200,
+      opacity: 0,
+      stagger: 0.1,
+      yoyo: true,
+    });
+
+    tl.from(".rent_paragraph ", {
+      duration: 0.3,
+      // y: -100,
+      opacity: 0,
+      stagger: 0.2,
+      yoyo: true,
+    });
+    tl.from(".button_learn", {
+      duration: 0.1,
+      x: -200,
+      opacity: 0,
+      stagger: 0.1,
+      yoyo: true,
+    });
+    tl.from(".button_learn_inner .char", {
+      duration: 0.3,
+      y: -100,
+      opacity: 0,
+      stagger: 0.1,
+      yoyo: true,
+    });
+    tl.from(".SidePati", {
+      duration: 0.3,
+      x: 200,
+      opacity: 0,
+      stagger: 0.4,
+    });
+    tl.from(".parent_filter", {
+      delay:0.5,
+      duration:1,
+      x: 200,
+      opacity: 0,
+      stagger: 0.4,
+      scrollTrigger: {
+        trigger: ".card_trigger",
+        // scrol",
+        // markers: true,
+        start: "top 90%",
+        end: "top 70%",
+        scrub: 5,
+      },
+    });
+    tl.from(".text_counter .char", {
+      duration: 0.1,
+      x: 200,
+      opacity: 0,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".parent_filter",
+        // scrol",
+        // markers: true,
+        start: "top 40%",
+        end: "top 50%",
+        scrub: 2,
+      },
+    });
+  
+  }, []);
+  useEffect(() => {
+    gsap.from(".text_counter .char ", {
+      delay: 0.5,
+      opacity: 0,
+      duration: 0.1,
+      y: -10,
+
+      scale: 0.5,
+    });
+  }, [selectedAmenities]);
   return (
     <>
-      <div className=" bg_image_rent bg-center bg-cover w-[100%]   h-[100vh] flex xs:flex-nowrap flex-wrap xs:justify-between justify-evenly  items-center flex-col  xs:flex-row">
+      <div className=" bg_image_rent bg-center bg-cover w-[100%]   h-[100vh] flex xs:flex-nowrap flex-wrap xs:justify-between justify-evenly  items-center flex-col  xs:flex-row ">
         <div className="  w-full h-[100vh]  absolute top-0 flex flex-wrap justify-between items-center text-center  bg-center bg-cover bg-[#030528] opacity-75 z-[190]"></div>
         {/* <div className=" w-[7%]"></div> */}
         <div className="text-white w-[87%] xs:w-[50%] sm:h-[100vh]  z-[200] flex justify-center flex-col items-center xs:items-start xs:ml-[5%]">
@@ -160,156 +241,179 @@ function Rent() {
               className=" xs:hidden max-w-[150px] sm:max-w-[160px] md:max-w-[180px] lg:max-w-[240px] w-full h-auto "
             />
           </Link>
-          <h2 className="lg:text-3xl xl:text-5xl font-semibold my-4 capitalize">
-            Looking for a home to Rent?
+          <h2 className="animation_heading myHeading1 lg:text-3xl xl:text-5xl font-semibold my-4 ">
+            <SplitText text="Looking for a home to Rent?" />
           </h2>
-          <p className="lg:text-[18px] xl:text-[22px] text-center xs:text-left">
+          <p className="rent_paragraph lg:text-[18px] xl:text-[20px] text-center xs:text-left">
             Discover your ideal rental home today! Browse our diverse listings
+          </p>
+          <p className="rent_paragraph lg:text-[18px] xl:text-[20px] text-center xs:text-left">
             of apartments, houses, and condos in prime locations. Your dream
+          </p>
+          <p className="rent_paragraph lg:text-[18px] xl:text-[20px] text-center xs:text-left">
             rental awaits.
           </p>
-          <Link
-            to="/Blog"
-            className=" mt-4 text-[16px] xs:text-[18px] font-[400] text-zinc-950 hover:bg-[#ffffffad] hover:translate-y-2 transition-transform duration-500 ease bg-white px-4 xs:px-8 py-1 pb-[5px] rounded-[7px]"
-          >
-            Learn More
-          </Link>
+          <div className="button_learn  mt-4 ">
+            <Link
+              to="/Blog"
+              className=" button_learn_inner mt-4 text-[16px] xs:text-[18px] font-[400] text-zinc-950 hover:bg-[#ffffffad] hover:translate-y-2 transition-transform duration-500 ease bg-white px-4 xs:px-8 py-1 pb-[5px] rounded-[7px]"
+            >
+              <SplitText text=" Learn More" />
+            </Link>
+          </div>
         </div>
-        <div className=" overflow-hidden !w-[58vw] xs:w-[39%] sm:w-[44%] xl:w-[43%] xs:h-[60%] rounded-lg  flex justify-center items-end flex-col  z-[200] gap-3 ">
-          <SidePati
-            text={"Excellent location"}
-            link="google.com"
-            icon={<FaLocationArrow />}
-          />
-          <SidePati text={"Affordable rates"} icon={<FaMoneyCheckAlt />} />
-          <SidePati text={"Modern amenities"} icon={<FaSwimmingPool />} />
-          <SidePati text={"Flexible lease options"} icon={<FaFileContract />} />
+        <div className=" overflow-hidden !w-[58vw] xs:w-[39%] sm:w-[44%] xl:w-[43%] xs:h-[60%] rounded-lg  flex justify-end items-end flex-col  z-[200] gap-3 ">
+          <div className="SidePati w-[100%] flex justify-end">
+            {" "}
+            <SidePati
+              text={"Excellent location"}
+              link="google.com"
+              icon={<FaLocationArrow />}
+            />
+          </div>
+          <div className="SidePati w-[100%] flex justify-end">
+            <SidePati text={"Affordable rates"} icon={<FaMoneyCheckAlt />} />
+          </div>
+          <div className="SidePati w-[100%] flex justify-end">
+            {" "}
+            <SidePati text={"Modern amenities"} icon={<FaSwimmingPool />} />
+          </div>
+          <div className="SidePati w-[100%] flex justify-end">
+            <SidePati
+              text={"Flexible lease options"}
+              icon={<FaFileContract />}
+            />
+          </div>
         </div>
       </div>
-      <div className="card_wrapper w-[100%] flex justify-start lg:items-start lg:flex-row flex-col items-center">
+      <div className="overflow-hidden card_wrapper w-[100%] flex justify-start lg:items-start lg:flex-row flex-col items-center">
         <div
           onClick={handleFilterVisibility}
-          className={`transition-all duration-100 ease-in-out !fixed top-0 ${filterVisibilityClass}  md:translate-x-0 bg-[#030528] opacity-50  w-full h-full z-[200] md:hidden`}
+          className={`secondPage_animation_fade_up transition-all duration-100 ease-in-out !fixed top-0 ${filterVisibilityClass}  md:translate-x-0 bg-[#030528] opacity-50  w-full h-full z-[200] md:hidden`}
         ></div>
-        <div
-          id="filterer"
-          className={`transition-all duration-300 ease-in-out  ${filterVisibilityClass} md:translate-x-0   md:w-[90%] lg:w-[20%] sm:w-[50vw] w-[80vw]  md:my-9  m-2 my-14 lg:my-4 rounded-lg bg-[#0A1033]  md:relative z-[200] flex md:justify-center md:items-center p-5  flex-wrap break-words shadow-2xl shadow-black `}
-        >
-          <div className="break-words w-full lg:justify-normal lg:block justify-normal block md:flex md:justify-center md:flex-col ">
-            <h2 className="text-2xl font-semibold text-white text-center">
-              Filters
-            </h2>
-            <div className="bg-zinc-400 py-[1px] my-1"></div>
-            <h2 className="text-1xl font-semibold text-white text-start inline-block ">
-              Amenities
-            </h2>
-            <div className="flex flex-col lg:flex-col  md:flex-row gap-2 p-3 md:flex-wrap md:justify-center">
-              {amenitiesList.map((e, index) => {
+        <div className="parent_filter  md:w-[90%] lg:w-[20%] sm:w-[50vw] w-[80vw] ">
+          <div
+            id="filterer"
+            className={` secondPage_animation_fade_up transition-all duration-300 ease-in-out  ${filterVisibilityClass} md:translate-x-0   md:my-9  m-2 my-14 lg:my-4 rounded-lg bg-[#0A1033]  md:relative z-[200] flex md:justify-center md:items-center p-5  flex-wrap break-words shadow-2xl shadow-black w-full`}
+          >
+            <div className="break-words w-full lg:justify-normal lg:block justify-normal block md:flex md:justify-center md:flex-col ">
+              <h2 className="text-2xl font-semibold text-white text-center">
+                Filters
+              </h2>
+              <div className="bg-zinc-400 py-[1px] my-1"></div>
+              <h2 className="text-1xl font-semibold text-white text-start inline-block ">
+                Amenities
+              </h2>
+              <div className="flex flex-col lg:flex-col  md:flex-row gap-2 p-3 md:flex-wrap md:justify-center">
+                {amenitiesList.map((e, index) => {
+                  return (
+                    <Checkbox
+                      value={e}
+                      key={index}
+                      type="checkbox"
+                      name={"amenities"}
+                      title={e}
+                      handlecheck={handlecheck}
+                    />
+                  );
+                })}
+              </div>
+              <h2 className="text-1xl font-semibold text-white ">
+                Rent Prce Range
+              </h2>
+              <div className=" md:w-full lg:w-[90%] text-white ">
+                <Slider
+                  className="slider"
+                  value={values}
+                  onChange={handleChange}
+                  min={min}
+                  max={max}
+                />
+              </div>
+              <div className="mt-3">
+                {range ? (
+                  <>
+                    <p className="text-white pl-2 font-light ">
+                      Min: {values[0]}
+                    </p>
+                    <p className="text-white pl-2 font-light  ">
+                      Max: {values[1]}
+                    </p>
+                  </>
+                ) : null}
+              </div>
+              <CloseButton
+                text="Close Filters"
+                ClickhandleChange={handleFilterVisibility}
+                href="#top_list"
+                classes="text-white md:hidden close_button scale-75"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="parent_filter md:w-[90%] lg:w-[75%] ">
+          <div
+            id="top_list"
+            className="flex justify-center items-center flex-col flex-wrap w-full my-4"
+          >
+            <div className="text-[#0A1033] px-2 text-1xl font-light text-center md:text-right w-[100%] py-2">
+              <div className="parent_filter text_counter">
+                <SplitText text={`Total Availiable : ${count}`} />
+              </div>
+              <div className=" flex  justify-center flex-col w-full items-center ">
+                <div className="container py-8 md:py-2">
+                  <div className="tabs">
+                    <Sorter
+                      id="tab1"
+                      title="Latest"
+                      onChange={() => handleSort("Latest")}
+                    />
+                    <Sorter
+                      id="tab2"
+                      title="Min to Max"
+                      onChange={() => handleSort("Min to Max")}
+                    />
+                    <Sorter
+                      id="tab3"
+                      title="Max to Min"
+                      onChange={() => handleSort("Max to Min")}
+                    />
+                  </div>
+                </div>
+                <button
+                  onClick={handleFilterVisibility}
+                  title="filter"
+                  href="#filterer"
+                  className="filter mt-2 md:hidden"
+                >
+                  <svg viewBox="0 0 512 512" height="1em">
+                    <path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path>
+                  </svg>
+                  <p>Filters</p>
+                </button>
+              </div>
+            </div>
+            <div className=" card_trigger flex justify-center items-center  flex-wrap  w-[100%] my-4">
+              {rentalHomes.map((data, index) => {
                 return (
-                  <Checkbox
-                    value={e}
+                  <Card
+                    location={data.location}
+                    description={data.description}
+                    realtor={data.realtor}
+                    price={"$" + data.price + "/month"}
+                    details={data.description}
+                    address={data.address}
                     key={index}
-                    type="checkbox"
-                    name={"amenities"}
-                    title={e}
-                    handlecheck={handlecheck}
+                    images={data.images}
+                    amenities={data.amenities}
                   />
                 );
               })}
             </div>
-            <h2 className="text-1xl font-semibold text-white ">
-              Rent Prce Range
-            </h2>
-            <div className=" md:w-full lg:w-[90%] text-white ">
-              <Slider
-                className="slider"
-                value={values}
-                onChange={handleChange}
-                min={min}
-                max={max}
-              />
-            </div>
-            <div className="mt-3">
-              {range ? (
-                <>
-                  <p className="text-white pl-2 font-light ">
-                    Min: {values[0]}
-                  </p>
-                  <p className="text-white pl-2 font-light  ">
-                    Max: {values[1]}
-                  </p>
-                </>
-              ) : null}
-            </div>
-            <CloseButton text="Close Filters" ClickhandleChange={handleFilterVisibility}  href="#top_list" classes="text-white md:hidden close_button scale-75" />
-            {/* <button
-             
-              className="text-white md:hidden"
-              onClick={handleFilterVisibility}
-            >
-              Close
-            </button> */}
-          </div>
-        </div>
-
-        <div
-          id="top_list"
-          className="flex justify-center items-center flex-col flex-wrap md:w-[90%] lg:w-[75%] my-4"
-        >
-          <div className="text-[#0A1033] px-2 text-1xl font-light text-center md:text-right w-[100%] py-2">
-            Total Availiable : {count}
-            <div className=" flex  justify-center flex-col w-full items-center ">
-              <div className="container py-8 md:py-2">
-                <div className="tabs">
-                  <Sorter
-                    id="tab1"
-                    title="Latest"
-                    onChange={() => handleSort("Latest")}
-                  />
-                  <Sorter
-                    id="tab2"
-                    title="Min to Max"
-                    onChange={() => handleSort("Min to Max")}
-                  />
-                  <Sorter
-                    id="tab3"
-                    title="Max to Min"
-                    onChange={() => handleSort("Max to Min")}
-                  />
-                </div>
-              </div>
-              <button
-                onClick={handleFilterVisibility}
-                title="filter"
-                href="#filterer"
-                className="filter mt-2 md:hidden"
-              >
-                <svg viewBox="0 0 512 512" height="1em">
-                  <path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path>
-                </svg>
-                <p>Filters</p>
-              </button>
-            </div>
-          </div>
-          <div className="flex justify-center items-center  flex-wrap  w-[100%] my-4">
-            {rentalHomes.map((data, index) => {
-              return (
-                <Card
-                  location={data.location}
-                  description={data.description}
-                  realtor={data.realtor}
-                  price={"$" + data.price + "/month"}
-                  details={data.description}
-                  address={data.address}
-                  key={index}
-                  images={data.images}
-                  amenities={data.amenities}
-                />
-              );
-            })}
           </div>
         </div>
       </div>
+      {/* <Footer /> */}
     </>
   );
 }

@@ -208,6 +208,9 @@ color:#fff;
 .split_heading{
   filter: drop-shadow(4px 4px 10px black);
 }
+.split_heading_service{
+  filter: drop-shadow(1px 1px 1px #ccc);
+}
 .splitting .char {
 	animation: slide-in .75s cubic-bezier(.5, 0, .5, 1) both;
 	animation-delay: calc(.25s + (120ms * var(--char-index)));
@@ -251,3 +254,9 @@ color:#fff;
    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
   }
  }
+ .char {
+  display: inline-block;
+}
+html{
+  scroll-behavior: smooth;
+}

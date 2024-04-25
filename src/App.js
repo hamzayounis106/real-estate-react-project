@@ -6,6 +6,7 @@ import About from "./Components/About";
 import Rent from "./Components/Rent";
 import Details from "./Components/Details";
 import Footer from "./Components/Footer";
+import Services from "./Components/Services";
 import { Routes, Route } from "react-router-dom";
 function App() {
   const location = useLocation();
@@ -15,8 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/details" element={<Details />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Rent" element={<Rent />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/rent" element={<Rent />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
       {location.pathname !== '/' && <Footer />}
     </>

@@ -1,10 +1,10 @@
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
-
+import { gsap } from "gsap";
 function Header() {
   let [headerPage, setHeaderPage] = useState(false);
   let [header_class, setHeader_class] = useState("translate-x-[-100%] ");
@@ -13,28 +13,36 @@ function Header() {
     setHeaderPage(!headerPage);
     setHeader_class(headerPage ? "translate-x-[-100%] " : "translate-x-0 ");
   };
-
+  useEffect(() => {
+    let tl = gsap.timeline();
+    tl.from(".menuButtin", {
+      delay:0.5,
+      y: -200,
+      opacity: 0,
+      duration: 0.5,
+    });
+  }, []);
   return (
     <>
       {/* Menu Button */}
-      <div className="w-full flex justify-end absolute top-0 left-0 z-[1000] ">
+      <div className="menuButtin w-full flex justify-end  left-0 z-[1000]  absolute top-0">
         <Button onClick={menuHandler} value={"Menu"} icon={<IoMdMenu />} />
       </div>
       {/* Header */}
-      <div className="overflow-hidden  " onClick={menuHandler} >
+      <div className="overflow-hidden  " onClick={menuHandler}>
         {/* translating the header */}
         <motion.div
-          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-[100%] sm:h-screen w-full absolute top-0 left-0 overflow-hidden`}
+          className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-[100%] sm:h-screen w-full  left-0 overflow-hidden absolute top-0`}
         >
           {/* left side of the header with bg image  */}
-          <div className="  w-[100%] h-[100%] sm:h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
+          <div className="absolute    w-[100%] h-[100%] sm:h-screen   top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
             {/* overlay on  the left bgimage on header  */}
-            <div className="  w-full h-[100%] sm:h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
+            <div className="absolute    w-full h-[100%] sm:h-screen   top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80"></div>
           </div>
           {/* right side of the header  */}
 
           <div
-            className={`w-full h-[100%] sm:h-screen absolute top-0 flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full`}
+            className={`w-full h-[100%] sm:h-screen  flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full absolute top-0 `}
           >
             <div className="text-white items-center flex justify-center flex-col ">
               <Link to="/">
@@ -51,19 +59,16 @@ function Header() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/Services">Services</Link>
+                  <Link to="/services">Services</Link>
                 </li>
                 <li>
-                  <Link to="/Buy">Buy</Link>
+                  <Link to="/rent">Rent</Link>
                 </li>
                 <li>
-                  <Link to="/Rent">Rent</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/About">About</Link>
-                </li>
-                <li>
-                  <Link to="/Contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

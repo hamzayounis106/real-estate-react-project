@@ -1,0 +1,30 @@
+.swiper {
+    width: 100%;
+    background-color: #ffffff00;
+    height:  100%;
+    opacity: 1;
+}
+
+.swiper-slide {
+      background-color: #ffffff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    opacity: 1;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .swiper-slide-shadow{
+    background-color: #ffff; opacity: 1;
+  }
+.swiper-slide{
+    opacity: 1 !important;
+}
+/* .bg_service_fixed_image_plumber{
+  background-image: url("../Assets/header_bg.jpeg");
+} */
+.bg_service_fixed_image_main{
+  background-image: url("../Assets/main_service_bg_image.png");
+}

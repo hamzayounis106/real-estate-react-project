@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import SplitText from "./SplitText"; // Import Swiper React components
 import "../Components/serviceStyle.css";
 function SingleServiceComponent(props) {
+  const videoRef = useRef(null);
+  const playVideo = () => {
+    
+    videoRef.current.play();
+  }
+  const pauseVideo = () => {
+    videoRef.current.pause();
+  }
   return (
     <>
       <div id={props.id} className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen  top-10 left-0">
@@ -39,12 +47,12 @@ function SingleServiceComponent(props) {
         </div>
       </div>
 
-      <div
+      <div onMouseOver={playVideo} onMouseOut={pauseVideo}
         className={`relative w-full flex justify-center  h-[70vh] bg-center bg-fixed bg-cover items-center my-20 `}
       >    <div className="absolute inset-0">
       <video
         className="w-full h-full object-cover object-center"
-        autoPlay
+        ref={videoRef}
         loop
         muted
         src={`./Videos/${props.video_name}`}

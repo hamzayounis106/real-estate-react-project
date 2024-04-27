@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense ,startTransition } from "react";
 import SplitText from "./SplitText";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -6,7 +6,9 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Autoplay } from "swiper/modules";
 import "../Components/serviceStyle.css";
-import SingleServiceComponent from "./SingleServiceComponent";
+// import SingleServiceComponent from "./SingleServiceComponent";
+import Footer from "./Footer";
+const LazySingleServiceComponent = lazy(() => import("./SingleServiceComponent"));
 function Services() {
   return (
     <>
@@ -88,8 +90,8 @@ function Services() {
         </div>
       </div>
 
-      <div className="relative w-full flex justify-center bg_service_fixed_image_main h-[50vh] bg-center bg-fixed bg-cover items-center my-20">
-        <div className="absolute inset-0 flex flex-col justify-evenly items-center text-center bg-[#030528] bg-opacity-70">
+      <div className="relative w-full flex justify-center  h-[50vh] bg-center  bg-cover items-center my-20">
+        <div className="absolute inset-0 flex flex-col justify-evenly items-center text-center bg-[#030528] ">
           <div className="w-[70%]">
             <h2 className="text-zinc-100 text-2xl lg:text-2xl sm:text-xl text-[1.2rem] font-bold text-center">
               <SplitText text="Your One-Stop Solution for Comfort and Convenience" />
@@ -103,8 +105,10 @@ function Services() {
           </div>
         </div>
       </div>
-
-      <SingleServiceComponent
+      <Suspense fallback={<div>Loading...</div>}>
+            
+          </Suspense>
+      <LazySingleServiceComponent
       id="Plumbing"
         video_name="Plumber_bg_video.webm"
         F_heading="Professional Plumbing Solutions"
@@ -125,7 +129,7 @@ function Services() {
                 it most."
         image_name="plumber_fixed_bgimage.webp"
       />
-      <SingleServiceComponent  id="Electrician"
+      <LazySingleServiceComponent  id="Electrician"
         video_name="Electician_bg_video.mp4"
         F_heading="Expert Electrical Services: Keeping Your Home Powered Safely"
         F_description="Ensure the safety and functionality of your home's electrical systems
@@ -141,7 +145,7 @@ function Services() {
         image_name="electrician_image.webp"
       />
 
-      <SingleServiceComponent  id="Wall_Painting"
+      <LazySingleServiceComponent  id="Wall_Painting"
         video_name="wallpaint_bg_video.webm"
         F_heading="Expert Wall Painting Services: Transform Your Home with Vibrant Colors"
         F_description="Transform your living spaces with our expert wall painting services.
@@ -158,7 +162,7 @@ function Services() {
         image_name="wallpaint_image.webp"
       />
 
-      <SingleServiceComponent id="Transport"
+      <LazySingleServiceComponent id="Transport"
         video_name="transport_bg_video.webm"
         F_heading="Reliable Transportation Services: Safely Moving Your Belongings"
         F_description="Experience stress-free moving with our reliable transportation services.
@@ -175,7 +179,7 @@ function Services() {
         image_name="transport_image.webp"
       />
 
-      <SingleServiceComponent  id="Internet"
+      <LazySingleServiceComponent  id="Internet"
         video_name="internet_bg_video.webm"
         F_heading="Reliable Internet Services: Keeping You Connected Anywhere"
         F_description="Stay connected with reliable internet services tailored to your needs.
@@ -207,8 +211,14 @@ function Services() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
 
 export default Services;
+function handleClick(data) {
+  startTransition(() => {
+  console.log(data)
+  });
+}

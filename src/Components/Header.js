@@ -12,6 +12,7 @@ function Header() {
   let [headerPage, setHeaderPage] = useState(false);
   let [header_class, setHeader_class] = useState("translate-x-[-100%] ");
   const [isOpen, setIsOpen] = useState(false);
+  const [close_bg, setclose_bg] = useState("!bg-[#d1d5db1f]");
   // changing the state of the header and translating the header
   const menuHandler = () => {
     setHeaderPage(!headerPage);
@@ -73,8 +74,15 @@ function Header() {
                   <Link to="/">Home</Link>
                 </li>
                 <li
-                  onMouseEnter={() => setIsOpen(true)}
-                  onMouseLeave={() => setIsOpen(false)}
+                  onMouseEnter={() => {
+                    setclose_bg("!bg-[#d1d5db00]");
+                    setIsOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    setclose_bg("!bg-[#d1d5db1f]");
+                    setIsOpen(false);
+                  }}
+                  
                 >
                   <div className="flex justify-center gap-x-2 items-center">
                     <Link to="/services">Services </Link>
@@ -85,7 +93,7 @@ function Header() {
                   {isOpen && (
                     <div
                       onMouseLeave={() => setIsOpen(false)}
-                      className=" bg-[#030528] absolute w-[200px] mt[-100px] flex justify-start pt-4 flex-col items-start gap-y-2 ml-[-20px] rounded-2xl px-2 py-2 text-xl "
+                      className=" bg-[#03052863] absolute w-[200px] mt[-100px] flex justify-start pt-4 flex-col items-start gap-y-2 ml-[-20px] rounded-2xl px-2 py-2 text-xl "
                     >
                       <HashLink
                         className="text-zinc-100 cursor-pointer p-2 hover:underline"
@@ -131,7 +139,7 @@ function Header() {
                 </li>
               </ul>
             </div>
-           
+
             <motion.div
               whileHover={{ scale: 1.2, rotate: 90 }}
               whileTap={{
@@ -139,9 +147,9 @@ function Header() {
                 rotate: -90,
                 borderRadius: "50%",
               }}
-              className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 md:w-14 md:h-10 bg-[#d1d5db1f] cursor-pointer text-white border-gray-800 rounded-full text-xl mt-4"
+              className={`flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 md:w-14 md:h-10 ${close_bg} cursor-pointer text-white border-gray-800 rounded-full text-xl mt-4 `}
             >
-              {isOpen===false && ( <AiOutlineClose onClick={menuHandler} /> )}
+              {isOpen === false && <AiOutlineClose onClick={menuHandler} />}
             </motion.div>
           </div>
         </motion.div>

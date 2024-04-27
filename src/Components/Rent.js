@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { FaLocationArrow } from "react-icons/fa";
-import { FaSwimmingPool } from "react-icons/fa";
-import { FaMoneyCheckAlt } from "react-icons/fa";
-import { FaFileContract } from "react-icons/fa6";
-import SidePati from "./SidePati";
 import { Link } from "react-router-dom";
+import { FaLocationArrow, FaSwimmingPool, FaMoneyCheckAlt, FaFileContract } from "react-icons/fa";
+import SidePati from "./SidePati";
 import Checkbox from "./SidebarComponents/Checkbox";
 import Card from "./Card";
 import Slider from "react-slider";
 import Sorter from "../Sorter";
 import CloseButton from "./CloseButton";
-import "../index.css";
 import rentalHomesData from "../db/RentalHomes.json";
 import { gsap } from "gsap";
-import SplitText from "./SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitText from "./SplitText";
+import Footer from "./Footer";
+import "../index.css";
+
 function Rent() {
   gsap.registerPlugin(ScrollTrigger);
   // (-__-)  (.__.)  (._.)  (,_,)  (._.)  (.__.) ༼ つ ◕_◕ ༽つ
@@ -413,7 +412,7 @@ function Rent() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

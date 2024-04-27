@@ -9,8 +9,15 @@ import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import { Routes, Route } from "react-router-dom";
+import gsap from "gsap";
+// import { useEffect } from "react";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
 function App() {
   const location = useLocation();
+  // let tl = gsap.timeline();
+
   return (
     <>
       <Header />
@@ -22,7 +29,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {location.pathname !== ("/" && "/contact") && <Footer />}
+      {/* {location.pathname !== "/" && location.pathname !== "/contact" && (
+        <Footer />
+      )} */}
     </>
   );
 }

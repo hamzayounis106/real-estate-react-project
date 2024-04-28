@@ -1,7 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import { Link } from "react-router-dom";
 import SplitText from "./SplitText";
 import "../animista.css";
 import {
@@ -13,69 +11,13 @@ import {
 } from "react-icons/pi";
 
 function Footer() {
-  // const location = useLocation();
 
-  const logoRef = useRef(null);
-  const iconsRef = useRef(null);
-  const menuRef = useRef(null);
-
-  // useLayoutEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   const tl = gsap.timeline();
-
-  //   // Animation setup for logo
-  //   // tl.from(logoRef.current, {
-  //   //   duration: 0.5,
-  //   //   x: 200,
-  //   //   opacity: 0,
-  //   //   ease: "power3.out",
-  //   //   scrollTrigger: {
-  //   //     trigger: logoRef.current,
-
-  //   //     start: "top 18%",
-  //   //     end: "top 40%",
-  //   //     scrub: 1,
-  //   //   },
-  //   // });
-
-  //   // Animation setup for icons
-  //   gsap.from(".icon_wrapper", {
-  //     duration: 0.5,
-  //     x: 200,
-  //     opacity: 0,
-  //     ease: "power3.out",
-  //     stagger: 0.2,
-  //     scrollTrigger: {
-  //       trigger: ".footer",
-  //     scroller: ".footer",
-  //     start: "top 80%",
-  //       end: "top 70%",
-  //       markers: true,
-  //       scrub: 1,
-  //     },
-  //   });
-
-  //   // Animation setup for menu items
-  //   // gsap.from(menuRef.current.children, {
-  //   //   duration: 0.5,
-  //   //   y: 100,
-  //   //   opacity: 0,
-  //   //   ease: "power3.out",
-  //   //   stagger: 0.2,
-  //   //   scrollTrigger: {
-  //   //     trigger: menuRef.current.children,
-  //   //     start: "top 98%",
-  //   //     end: "top 80%",
-  //   //     scrub: 1,
-  //   //   },
-  //   // });
-  // }, [location.pathname]);
   return (
     <>
       <div id="footer" className="slide-top  footer  ">
         <div className=" w-full bg-[#0A1033] p-4 flex flex-col sm:py-8 sm:items-center pb-6 sm:flex-row ">
           <div className="w-full sm:w-[50%] flex flex-col justify-between items-center sm:justify-start">
-            <Link to="/" className="footer_logo" ref={logoRef}>
+            <Link to="/" className="footer_logo" >
               <img
                 src="https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
                 className="max-w-[130px] w-full h-auto sm:max-w-[160px] lg:max-w-[200px] "
@@ -92,7 +34,7 @@ function Footer() {
                 >
                   <PiInstagramLogoFill />
                 </a>
-              </div>{" "}
+              </div>
               <div className="icon">
                 <a
                   href="#"
@@ -100,7 +42,7 @@ function Footer() {
                 >
                   <PiFacebookLogoFill />
                 </a>
-              </div>{" "}
+              </div>
               <div className="icon">
                 <a
                   href="#"
@@ -108,15 +50,15 @@ function Footer() {
                 >
                   <PiTwitterLogoFill />
                 </a>
-              </div>{" "}
+              </div>
               <div className="icon">
                 <a
                   href="#"
                   className="footer_icons text-[#eb8282] sm:hover:scale-105 sm:hover:text-[#c2b9b9] transition-all "
                 >
                   <PiYoutubeLogoFill />
-                </a>{" "}
-              </div>{" "}
+                </a>
+              </div>
               <div className="icon">
                 <a
                   href="#"
@@ -128,7 +70,7 @@ function Footer() {
             </ul>
             <ul
               className=" footer_menu sm:flex hidden px-2 text-[12px] lg:text-[0.95rem] font-medium sm:mt-0 my-3   items-center sm:justify-start sm:items-start justify-center  rounded-md text-white sm:gap-1 "
-              ref={menuRef}
+            
             >
               <li className="sm:pl-1 sm:pr-0">
                 <Link to="/">Home</Link>

@@ -21,6 +21,7 @@ import { LuParkingCircle } from "react-icons/lu";
 import { BiSolidWasher } from "react-icons/bi";
 import { BiSolidDryer } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function App() {
   const { state } = useLocation();
   // console.log(state);
@@ -38,6 +39,7 @@ export default function App() {
     <>
       <div className="bg-[#0A1033]  h-[100%] flex justify-center items-center flex-col overflow-hidden">
         <div className="h-[15vh] flex justify-start items-stretch">
+          <Link to="/" className="footer_logo">
           <img
             src={
               "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
@@ -45,6 +47,7 @@ export default function App() {
             alt="logo"
             className="max-w-[180px] p-3 w-full h-auto "
           />
+          </Link>
         </div>
         <div className="flex justify-center items-center ">
           <div className="details_images_gallery w-[100vw] h-[70vh] rounded-sm overflow-hidden bg-[#ffffff]">

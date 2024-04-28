@@ -6,16 +6,20 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Autoplay } from "swiper/modules";
 import "../Components/serviceStyle.css";
-// import SingleServiceComponent from "./SingleServiceComponent";
+import SingleServiceComponent from "./SingleServiceComponent";
 import Footer from "./Footer";
 import gsap from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useLayoutEffect  } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-const LazySingleServiceComponent = lazy(() =>
-  import("./SingleServiceComponent")
-);
+// const LazySingleServiceComponent = ()=>{
+//     import("./SingleServiceComponent")
+//     return <LazySingleServiceComponent />;
+// }
+// const LazySingleServiceComponent = lazy(() =>
+//   import("./SingleServiceComponent")
+// );
 function Services() {
-  useEffect(() => {
+  useLayoutEffect (() => {
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     tl.from(".hero_heading .char", {
@@ -340,8 +344,8 @@ function Services() {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}></Suspense>
-      <LazySingleServiceComponent
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
+      <SingleServiceComponent
         id="Plumbing"
         video_name="Plumber_bg_video.webm"
         F_heading="Professional Plumbing Solutions"
@@ -362,7 +366,7 @@ function Services() {
                 it most."
         image_name="plumber_fixed_bgimage.webp"
       />
-      <LazySingleServiceComponent
+      <SingleServiceComponent
         id="Electrician"
         video_name="Electician_bg_video.mp4"
         F_heading="Expert Electrical Services: Keeping Your Home Powered Safely"
@@ -379,7 +383,7 @@ function Services() {
         image_name="electrician_image.webp"
       />
 
-      <LazySingleServiceComponent
+      <SingleServiceComponent
         id="Wall_Painting"
         video_name="wallpaint_bg_video.webm"
         F_heading="Expert Wall Painting Services: Transform Your Home with Vibrant Colors"
@@ -397,7 +401,7 @@ function Services() {
         image_name="wallpaint_image.webp"
       />
 
-      <LazySingleServiceComponent
+      <SingleServiceComponent
         id="Transport"
         video_name="transport_bg_video.webm"
         F_heading="Reliable Transportation Services: Safely Moving Your Belongings"
@@ -415,7 +419,7 @@ function Services() {
         image_name="transport_image.webp"
       />
 
-      <LazySingleServiceComponent
+      <SingleServiceComponent
         id="Internet"
         video_name="internet_bg_video.webm"
         F_heading="Reliable Internet Services: Keeping You Connected Anywhere"
@@ -431,7 +435,7 @@ function Services() {
     browsing, streaming, and gaming needs."
         image_name="Internet_fixed_bgimage.webp"
       />
-
+{/* </Suspense> */}
       <div id="service_footer" className=" relative w-full flex justify-center items-center my-20 ">
         <div className="flex flex-col justify-evenly items-center text-center ">
           <div className="w-[70%]">
@@ -450,7 +454,6 @@ function Services() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

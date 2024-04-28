@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import SplitText from "./SplitText";
+import "../animista.css";
 import { gsap } from "gsap";
 function Main() {
   useEffect(() => {
@@ -44,7 +45,7 @@ function Main() {
   }, []);
   return (
     <>
-      <div className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen absolute top-0 left-0">
+      <div className=" bg-[#030528] overflow-hidden flex items-center w-full h-[100%] sm:h-screen absolute top-0 left-0">
         <div className="   hidden md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen bg-zinc-950 bg-center bg-cover bg_image_buy  md:flex flex-col justify-evenly items-center ">
           <div className=" hidden md:flex  md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  absolute top-0text-center  bg-center bg-cover z-40 bg-[#030528] opacity-70"></div>
           <img

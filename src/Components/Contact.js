@@ -9,7 +9,7 @@ import { PiYoutubeLogoFill } from "react-icons/pi";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-
+import "../animista.css";
 import Footer from "./Footer";
 import SplitText from "./SplitText";
 function Contact() {
@@ -36,7 +36,7 @@ function Contact() {
   };
   return (
     <>
-      <div className=" flex h-screen w-full row justify-stretch items-center ">
+      <div className=" slide-top flex h-screen w-full row justify-stretch items-center ">
         <div className="relative w-[40%] bg-zinc-950 h-full rounded-r-full flex flex-col justify-center items-center z-[100] ">
           <div className="absolute rounded-r-full     inset-0 object-cover  sm:h-screen   top-0 flex flex-col justify-evenly items-center text-center bg_image_header bg-top bg-cover bg-no-repeat">
             <div className="absolute inset-0 object-cover  sm:h-screen   top-0 flex flex-col justify-evenly items-center rounded-r-full  text-center  bg-center bg-cover  bg-[#030528] opacity-80"></div>

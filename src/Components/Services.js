@@ -1,4 +1,4 @@
-import React, { lazy, Suspense ,startTransition } from "react";
+import React, { lazy, Suspense, startTransition } from "react";
 import SplitText from "./SplitText";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -8,8 +8,239 @@ import { EffectCards, Autoplay } from "swiper/modules";
 import "../Components/serviceStyle.css";
 // import SingleServiceComponent from "./SingleServiceComponent";
 import Footer from "./Footer";
-const LazySingleServiceComponent = lazy(() => import("./SingleServiceComponent"));
+import gsap from "gsap";
+import { useEffect, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+const LazySingleServiceComponent = lazy(() =>
+  import("./SingleServiceComponent")
+);
 function Services() {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline();
+    tl.from(".hero_heading .char", {
+      duration: 0.1,
+      // x: 200,
+      opacity: 0,
+      stagger: 0.1,
+    });
+    tl.from(".hero_text p", {
+      duration: 0.4,
+      delay: 0.4,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+    });
+    tl.from(".swiperssliders", {
+      duration: 0.4,
+      delay: 0.4,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+    });
+    tl.from(".hero_button", {
+      delay: 0.4,
+      duration: 0.4,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+    });
+    gsap.from(".scrollup_secondsection", {
+      delay: 0.4,
+      duration: 0.4,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".scrollup_secondsection",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 1,
+      },
+    });
+    gsap.from("#Plumbing .S-scroll_top", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#Plumbing .S-scroll_top",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from(".Plumbing", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".Plumbing",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from("#Electrician .S-scroll_top", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#Electrician .S-scroll_top",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+
+    gsap.from(".Electrician", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".Electrician",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from("#Wall_Painting .S-scroll_top", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#Wall_Painting .S-scroll_top",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+
+    gsap.from(".Wall_Painting", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".Wall_Painting",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from("#Transport .S-scroll_top", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#Transport .S-scroll_top",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+
+    gsap.from(".Transport", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".Transport",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from("#Internet .S-scroll_top", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#Internet .S-scroll_top",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+
+    gsap.from(".Internet", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".Internet",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+    gsap.from("#service_footer .serviceFoter_top_scrol", {
+      delay: 0.7,
+      duration: 0.7,
+      stagger: 0.1,
+      scale: 0.5,
+      y: 200,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#service_footer ",
+
+        start: "top 98%",
+        markers: false,
+        end: "top 80%",
+        scrub: 4,
+      },
+    });
+  }, []);
   return (
     <>
       <div className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen  top-10 left-0">
@@ -18,17 +249,21 @@ function Services() {
             <div>
               <h2
                 data-splitting
-                className=" myHeading1 split_heading_service lg:text-4xl md:text-[1.8rem] font-bold text-[#030528] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]"
+                className=" hero_heading split_heading_service lg:text-4xl md:text-[1.8rem] font-bold text-[#030528] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]"
               >
                 <SplitText text="Home Support, Simplified" />
                 <SplitText text="Bunters Your Partner" />
               </h2>
-              <p className="lg:text-[22px] sm:text-xl text-[1.2rem] font-light text-[#030528] text-center myHeading1 ">
-                <SplitText text="We've got you covered for your home needs. With our comprehensive services, enjoy peace of mind and convenience every step of the way." />
-              </p>
+              <div className="hero_text">
+                <p className="lg:text-[22px] sm:text-xl text-[1.2rem] font-light text-[#030528] text-center  ">
+                  We've got you covered for your home needs. With our
+                  comprehensive services, enjoy peace of mind and convenience
+                  every step of the way.
+                </p>
+              </div>
             </div>
             <div className="flex justify-center gap-y-3 gap-x-6 sm:gap-9 mt-4 flex-wrap">
-              <div className="button_dropdrown_animation">
+              <div className="button_dropdrown_animation hero_button">
                 <a
                   href="#servces"
                   className="lg:text-[20px] font-[400] text-[#f1f0f0] hover:bg-[#972020c7] hover:translate-y-2 transition-transform duration-500 ease bg-[#972020] px-8 py-1 pb-[5px] rounded-[7px]  button_dropdrown_animation button_text_animation"
@@ -39,7 +274,7 @@ function Services() {
             </div>
           </div>
         </div>
-        <div className="   hidden md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  bg-center bg-cover   md:flex flex-col justify-evenly items-center ">
+        <div className=" swiperssliders   hidden md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  bg-center bg-cover   md:flex flex-col justify-evenly items-center ">
           <Swiper
             // effect={"cards"}
             grabCursor={true}
@@ -90,13 +325,13 @@ function Services() {
         </div>
       </div>
 
-      <div className="relative w-full flex justify-center  h-[50vh] bg-center  bg-cover items-center my-20">
+      <div className=" main_second_section scrollup_secondsection relative w-full flex justify-center  h-[50vh] bg-center  bg-cover items-center my-20">
         <div className="absolute inset-0 flex flex-col justify-evenly items-center text-center bg-[#030528] ">
           <div className="w-[70%]">
-            <h2 className="text-zinc-100 text-2xl lg:text-2xl sm:text-xl text-[1.2rem] font-bold text-center">
-              <SplitText text="Your One-Stop Solution for Comfort and Convenience" />
+            <h2 className=" scrollup_secondsection text-zinc-100 text-2xl lg:text-2xl sm:text-xl text-[1.2rem] font-bold text-center">
+              Your One-Stop Solution for Comfort and Convenience
             </h2>
-            <p className="text-zinc-100 text-center text-xl">
+            <p className="scrollup_secondsection text-zinc-100 text-center text-xl">
               Experience worry-free living with our array of essential services
               including electrician, plumbing, transportation, and internet
               provision. Elevate your rental experience with seamless support at
@@ -105,11 +340,9 @@ function Services() {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-            
-          </Suspense>
+      <Suspense fallback={<div>Loading...</div>}></Suspense>
       <LazySingleServiceComponent
-      id="Plumbing"
+        id="Plumbing"
         video_name="Plumber_bg_video.webm"
         F_heading="Professional Plumbing Solutions"
         F_description="Experience reliable plumbing services tailored to your needs.
@@ -129,7 +362,8 @@ function Services() {
                 it most."
         image_name="plumber_fixed_bgimage.webp"
       />
-      <LazySingleServiceComponent  id="Electrician"
+      <LazySingleServiceComponent
+        id="Electrician"
         video_name="Electician_bg_video.mp4"
         F_heading="Expert Electrical Services: Keeping Your Home Powered Safely"
         F_description="Ensure the safety and functionality of your home's electrical systems
@@ -145,7 +379,8 @@ function Services() {
         image_name="electrician_image.webp"
       />
 
-      <LazySingleServiceComponent  id="Wall_Painting"
+      <LazySingleServiceComponent
+        id="Wall_Painting"
         video_name="wallpaint_bg_video.webm"
         F_heading="Expert Wall Painting Services: Transform Your Home with Vibrant Colors"
         F_description="Transform your living spaces with our expert wall painting services.
@@ -162,7 +397,8 @@ function Services() {
         image_name="wallpaint_image.webp"
       />
 
-      <LazySingleServiceComponent id="Transport"
+      <LazySingleServiceComponent
+        id="Transport"
         video_name="transport_bg_video.webm"
         F_heading="Reliable Transportation Services: Safely Moving Your Belongings"
         F_description="Experience stress-free moving with our reliable transportation services.
@@ -179,7 +415,8 @@ function Services() {
         image_name="transport_image.webp"
       />
 
-      <LazySingleServiceComponent  id="Internet"
+      <LazySingleServiceComponent
+        id="Internet"
         video_name="internet_bg_video.webm"
         F_heading="Reliable Internet Services: Keeping You Connected Anywhere"
         F_description="Stay connected with reliable internet services tailored to your needs.
@@ -195,19 +432,21 @@ function Services() {
         image_name="Internet_fixed_bgimage.webp"
       />
 
-      <div className="relative w-full flex justify-center items-center my-20 ">
+      <div id="service_footer" className=" relative w-full flex justify-center items-center my-20 ">
         <div className="flex flex-col justify-evenly items-center text-center ">
           <div className="w-[70%]">
+            <div className="serviceFoter_top_scrol">
             <p className="text-zinc-900 text-center text-xl mb-10">
               Experience convenience at your fingertips. Contact us today and
               let's elevate your home living together.
-            </p>
+            </p></div>
+            <div className="serviceFoter_top_scrol">
             <a
               href="/contact"
               className="lg:text-[20px] font-[400] text-zinc-900 hover:text-white hover:bg-[#972020c7] hover:translate-y-2 transition-transform duration-500 ease border-2 border-[#972020] px-8 py-1 pb-[5px] rounded-[7px]  button_dropdrown_animation button_text_animation"
             >
               <SplitText text="Contact Now" />
-            </a>
+            </a></div>
           </div>
         </div>
       </div>
@@ -219,6 +458,6 @@ function Services() {
 export default Services;
 function handleClick(data) {
   startTransition(() => {
-  console.log(data)
+    console.log(data);
   });
 }

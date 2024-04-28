@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "./SplitText";
-
+import "../animista.css";
 import {
   PiInstagramLogoFill,
   PiFacebookLogoFill,
@@ -13,66 +13,66 @@ import {
 } from "react-icons/pi";
 
 function Footer() {
-  const location = useLocation();
+  // const location = useLocation();
 
   const logoRef = useRef(null);
   const iconsRef = useRef(null);
   const menuRef = useRef(null);
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline();
+  // useLayoutEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   const tl = gsap.timeline();
 
-    // Animation setup for logo
-    // tl.from(logoRef.current, {
-    //   duration: 0.5,
-    //   x: 200,
-    //   opacity: 0,
-    //   ease: "power3.out",
-    //   scrollTrigger: {
-    //     trigger: logoRef.current,
+  //   // Animation setup for logo
+  //   // tl.from(logoRef.current, {
+  //   //   duration: 0.5,
+  //   //   x: 200,
+  //   //   opacity: 0,
+  //   //   ease: "power3.out",
+  //   //   scrollTrigger: {
+  //   //     trigger: logoRef.current,
 
-    //     start: "top 18%",
-    //     end: "top 40%",
-    //     scrub: 1,
-    //   },
-    // });
+  //   //     start: "top 18%",
+  //   //     end: "top 40%",
+  //   //     scrub: 1,
+  //   //   },
+  //   // });
 
-    // Animation setup for icons
-    gsap.from(".icon_wrapper", {
-      duration: 0.5,
-      x: 200,
-      opacity: 0,
-      ease: "power3.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".footer",
-      scroller: ".footer",
-      start: "top 80%",
-        end: "top 70%",
-        // markers: true,
-        scrub: 1,
-      },
-    });
+  //   // Animation setup for icons
+  //   gsap.from(".icon_wrapper", {
+  //     duration: 0.5,
+  //     x: 200,
+  //     opacity: 0,
+  //     ease: "power3.out",
+  //     stagger: 0.2,
+  //     scrollTrigger: {
+  //       trigger: ".footer",
+  //     scroller: ".footer",
+  //     start: "top 80%",
+  //       end: "top 70%",
+  //       markers: true,
+  //       scrub: 1,
+  //     },
+  //   });
 
-    // Animation setup for menu items
-    // gsap.from(menuRef.current.children, {
-    //   duration: 0.5,
-    //   y: 100,
-    //   opacity: 0,
-    //   ease: "power3.out",
-    //   stagger: 0.2,
-    //   scrollTrigger: {
-    //     trigger: menuRef.current.children,
-    //     start: "top 98%",
-    //     end: "top 80%",
-    //     scrub: 1,
-    //   },
-    // });
-  }, [location.pathname]);
+  //   // Animation setup for menu items
+  //   // gsap.from(menuRef.current.children, {
+  //   //   duration: 0.5,
+  //   //   y: 100,
+  //   //   opacity: 0,
+  //   //   ease: "power3.out",
+  //   //   stagger: 0.2,
+  //   //   scrollTrigger: {
+  //   //     trigger: menuRef.current.children,
+  //   //     start: "top 98%",
+  //   //     end: "top 80%",
+  //   //     scrub: 1,
+  //   //   },
+  //   // });
+  // }, [location.pathname]);
   return (
     <>
-      <div id="footer" className="  footer  ">
+      <div id="footer" className="slide-top  footer  ">
         <div className=" w-full bg-[#0A1033] p-4 flex flex-col sm:py-8 sm:items-center pb-6 sm:flex-row ">
           <div className="w-full sm:w-[50%] flex flex-col justify-between items-center sm:justify-start">
             <Link to="/" className="footer_logo" ref={logoRef}>

@@ -40,17 +40,18 @@ export default function App() {
       <div className="bg-[#0A1033]  h-[100%] flex justify-center items-center flex-col overflow-hidden">
         <div className="h-[15vh] flex justify-start items-stretch">
           <Link to="/" className="footer_logo">
-          <img
-            src={
-              "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-            }
-            alt="logo"
-            className="max-w-[180px] p-3 w-full h-auto "
-          />
+            <img
+              src={
+                "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
+              }
+              alt="logo"
+              className="max-w-[180px] p-3 w-full h-auto "
+            />
           </Link>
         </div>
-        <div className="flex justify-center items-center ">
-          <div className="details_images_gallery w-[100vw] h-[70vh] rounded-sm overflow-hidden bg-[#ffffff]">
+        <div className="flex justify-center items-center  ">
+          <div className="details_images_gallery w-[100vw] h-[80vh] rounded-sm  bg-[#ffffff] flex justify-center items-center flex-col">
+            
             <Swiper
               style={{
                 "--swiper-navigation-color": "#fff",
@@ -69,7 +70,6 @@ export default function App() {
                   </SwiperSlide>
                 );
               })}
-             
             </Swiper>
             <Swiper
               onSwiper={setThumbsSwiper}
@@ -81,7 +81,7 @@ export default function App() {
               modules={[FreeMode, Navigation, Thumbs]}
               className="mySwiper"
             >
-               {state.imagesP.map((data, index) => {
+              {state.imagesP.map((data, index) => {
                 return (
                   <SwiperSlide key={index}>
                     <img src={`./Images/${data}`} />

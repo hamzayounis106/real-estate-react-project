@@ -9,6 +9,7 @@
     "framer-motion": "^11.0.8",
     "gsap": "^3.12.5",
     "install": "^0.13.0",
+    "nodeman": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -24,6 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "start:dev": "nodemon index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

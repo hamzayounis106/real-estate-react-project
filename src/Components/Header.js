@@ -34,7 +34,7 @@ function Header() {
         <Button onClick={menuHandler} value={"Menu"} icon={<IoMdMenu />} />
       </div>
       {/* Header */}
-      <div className="overflow-hidden  ">
+      <div className="overflow-hidden ">
         {/* translating the header */}
         <motion.div
           className={`header_main_wrapper ${header_class} transition-transform duration-500 ease-in-out z-[1100] flex h-[100%] sm:h-screen w-full  left-0 overflow-hidden fixed top-0`}
@@ -56,7 +56,7 @@ function Header() {
             onClick={menuHandler}
             className={`w-full h-[100%] sm:h-screen  flex flex-col justify-center items-center text-center bg-cover bg-center ${header_class} transition-transform duration-1000 ease w-full absolute top-0 `}
           >
-            <div className="text-white items-center flex justify-center flex-col ">
+            <div className="flex flex-col items-center justify-center text-white ">
               <Link to="/">
                 <img
                   src={
@@ -68,7 +68,7 @@ function Header() {
               </Link>
               <ul
                 onClick={menuHandler}
-                className="list w-[80%] sm:w-full  sm:flex-row min_  text-[12px] sm:text-[15px] lg:text-xl font-medium my-5 flex sm:gap-4 md:gap-10 bg-[#d1d5db1f] items-center justify-center px-4 py-2 sm:px-10 rounded-md sm:flex-nowrap flex-wrap "
+                className="list w-[80%] sm:w-full  sm:flex-row min_  text-[15px] sm:text-[15px] lg:text-xl font-medium my-5 flex sm:gap-4 md:gap-10 bg-[#d1d5db1f] items-center justify-center px-4 py-2 sm:px-10 rounded-md sm:flex-nowrap flex-wrap "
               >
                 <li>
                   <Link to="/">Home</Link>
@@ -84,7 +84,7 @@ function Header() {
                   }}
                   
                 >
-                  <div className="flex justify-center gap-x-2 items-center">
+                  <div className="flex items-center justify-center gap-x-2">
                     <Link to="/services">Services </Link>
                     <span className="cursor-default">
                       <IoIosArrowDropdown className="cursor-default" />
@@ -96,31 +96,31 @@ function Header() {
                       className=" bg-[#03052863] absolute w-[200px] mt[-100px] flex justify-start pt-4 flex-col items-start gap-y-2 ml-[-20px] rounded-2xl px-2 py-2 text-xl "
                     >
                       <HashLink
-                        className="text-zinc-100 cursor-pointer p-2 hover:underline"
+                        className="p-2 cursor-pointer text-zinc-100 hover:underline"
                         to="/services#Wall_Painting"
                       >
                         Wall Painting
                       </HashLink>
                       <HashLink
-                        className="text-zinc-100 cursor-pointer p-2 hover:underline"
+                        className="p-2 cursor-pointer text-zinc-100 hover:underline"
                         to="/services#Electrician"
                       >
                         Electrician
                       </HashLink>
                       <HashLink
-                        className="text-zinc-100 cursor-pointer p-2 hover:underline"
+                        className="p-2 cursor-pointer text-zinc-100 hover:underline"
                         to="/services#Plumbing"
                       >
                         Plumbing
                       </HashLink>
                       <HashLink
-                        className="text-zinc-100 cursor-pointer p-2 hover:underline"
+                        className="p-2 cursor-pointer text-zinc-100 hover:underline"
                         to="/services#Internet"
                       >
                         Internet & Cable
                       </HashLink>
                       <HashLink
-                        className="text-zinc-100 cursor-pointer p-2 hover:underline"
+                        className="p-2 cursor-pointer text-zinc-100 hover:underline"
                         to="/services#Transport"
                       >
                         Transport

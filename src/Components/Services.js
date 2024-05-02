@@ -1,15 +1,14 @@
-import React, { lazy, Suspense, startTransition } from "react";
+import React from "react";
 import SplitText from "./SplitText";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards, Autoplay } from "swiper/modules";
-import "../Components/serviceStyle.css";
+import "./serviceStyle.css";
 import SingleServiceComponent from "./SingleServiceComponent";
-import Footer from "./Footer";
 import gsap from "gsap";
-import { useEffect, useState,useLayoutEffect  } from "react";
+import { useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // const LazySingleServiceComponent = ()=>{
 //     import("./SingleServiceComponent")
@@ -19,7 +18,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 //   import("./SingleServiceComponent")
 // );
 function Services() {
-  useLayoutEffect (() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline();
     tl.from(".hero_heading .char", {
@@ -247,19 +246,20 @@ function Services() {
   }, []);
   return (
     <>
-      <div className="overflow-hidden flex items-center w-full h-[100%] sm:h-screen  top-10 left-0">
-        <div className=" flex  justify-center w-full md:w-[60%] lg:w-6/12 h-[100%] sm:h-screen bg-zinc-350 bg-center bg-cover ">
-          <div className="absolute z-[900] flex justify-evenly sm:justify-center items-center h-[100%] sm:h-screen w-[98%] sm:w-[90%]  md:w-[60%] lg:w-6/12 flex-col px-10">
+      <div className="overflow-hidden flex items-center justify-center w-full h-[80vh] md:h-[70vh] lg:h-[100vh] sm:h-screen  lg:top-10 pt-[5vh] left-0 flex-col-reverse md:flex-row">
+        <div className=" flex  justify-center w-full sm:w-[80%] md:w-[50%] lg:w-6/12 md:h-screen   sm:h-[50%] bg-zinc-350 bg-center bg-cover ">
+          <div className=" z-[900] flex justify-evenly sm:justify-center items-center  md:h-[100%]  w-[98%]  flex-col px-10">
             <div>
               <h2
                 data-splitting
-                className=" hero_heading split_heading_service lg:text-4xl md:text-[1.8rem] font-bold text-[#030528] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]"
+                className=" hero_heading split_heading_service lg:text-3xl font-bold text-[#030528] text-center lg:mb-4 md:mb-2 sm:text-xl md:text-[1.2rem] "
               >
                 <SplitText text="Home Support, Simplified" />
+                <br />
                 <SplitText text="Bunters Your Partner" />
               </h2>
               <div className="hero_text">
-                <p className="lg:text-[22px] sm:text-xl text-[1.2rem] font-light text-[#030528] text-center  ">
+                <p className="lg:text-[22px] md:text-[1.05rem] text-md sm:text-[1.2rem] font-light text-[#030528] text-center  ">
                   We've got you covered for your home needs. With our
                   comprehensive services, enjoy peace of mind and convenience
                   every step of the way.
@@ -278,7 +278,7 @@ function Services() {
             </div>
           </div>
         </div>
-        <div className=" swiperssliders   hidden md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  bg-center bg-cover   md:flex flex-col justify-evenly items-center ">
+        <div className=" swiperssliders w-[80%] sm:w-[60%]    md:w-[45%] lg:w-6/12 h-[50%] md:h-screen  bg-center bg-cover   md:flex flex-col justify-evenly items-center ">
           <Swiper
             // effect={"cards"}
             grabCursor={true}
@@ -329,13 +329,13 @@ function Services() {
         </div>
       </div>
 
-      <div className=" main_second_section scrollup_secondsection relative w-full flex justify-center  h-[50vh] bg-center  bg-cover items-center my-20">
+      <div className=" main_second_section scrollup_secondsection relative w-full flex justify-center h-[40vh] sm:h-[50vh] bg-center  bg-cover items-center my-20">
         <div className="absolute inset-0 flex flex-col justify-evenly items-center text-center bg-[#030528] ">
-          <div className="w-[70%]">
-            <h2 className=" scrollup_secondsection text-zinc-100 text-2xl lg:text-2xl sm:text-xl text-[1.2rem] font-bold text-center">
+          <div className=" w-[90%] md:w-[80%] lg:w-[70%]">
+            <h2 className=" scrollup_secondsection text-zinc-100 lg:text-2xl text-xl  md:text-[1.2rem] font-bold text-center">
               Your One-Stop Solution for Comfort and Convenience
             </h2>
-            <p className="scrollup_secondsection text-zinc-100 text-center text-xl">
+            <p className="scrollup_secondsection text-zinc-100 text-center md:text-[1.05rem]">
               Experience worry-free living with our array of essential services
               including electrician, plumbing, transportation, and internet
               provision. Elevate your rental experience with seamless support at
@@ -435,22 +435,27 @@ function Services() {
     browsing, streaming, and gaming needs."
         image_name="Internet_fixed_bgimage.webp"
       />
-{/* </Suspense> */}
-      <div id="service_footer" className=" relative w-full flex justify-center items-center my-20 ">
+      {/* </Suspense> */}
+      <div
+        id="service_footer"
+        className=" relative w-full flex justify-center items-center  mt-6 my-20 sm:my-20 "
+      >
         <div className="flex flex-col justify-evenly items-center text-center ">
           <div className="w-[70%]">
             <div className="serviceFoter_top_scrol">
-            <p className="text-zinc-900 text-center text-xl mb-10">
-              Experience convenience at your fingertips. Contact us today and
-              let's elevate your home living together.
-            </p></div>
+              <p className="text-zinc-900 text-center text-xl mb-10">
+                Experience convenience at your fingertips. Contact us today and
+                let's elevate your home living together.
+              </p>
+            </div>
             <div className="serviceFoter_top_scrol">
-            <a
-              href="/contact"
-              className="lg:text-[20px] font-[400] text-zinc-900 hover:text-white hover:bg-[#972020c7] hover:translate-y-2 transition-transform duration-500 ease border-2 border-[#972020] px-8 py-1 pb-[5px] rounded-[7px]  button_dropdrown_animation button_text_animation"
-            >
-              <SplitText text="Contact Now" />
-            </a></div>
+              <a
+                href="/contact"
+                className="lg:text-[20px] font-[400] text-zinc-900 hover:text-white hover:bg-[#972020c7] hover:translate-y-2 transition-transform duration-500 ease border-2 border-[#972020] px-8 py-1 pb-[5px] rounded-[7px]  button_dropdrown_animation button_text_animation"
+              >
+                <SplitText text="Contact Now" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -459,8 +464,3 @@ function Services() {
 }
 
 export default Services;
-function handleClick(data) {
-  startTransition(() => {
-    console.log(data);
-  });
-}

@@ -28,3 +28,20 @@
 .bg_service_fixed_image_main{
   background-image: url("../Assets/main_service_bg_image.webp");
 }
+  
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 418px) {
+  .swiper-slide img {
+    width: 100%;
+    height: 80% !important;
+    object-fit: contain;
+  }
+  
+}
+/* ------------------- */

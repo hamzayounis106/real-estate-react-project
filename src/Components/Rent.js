@@ -289,15 +289,15 @@ function Rent() {
             </div>
           </div>
         </div>
-        <div className="overflow-hidden card_wrapper w-[100%] flex justify-start lg:items-start lg:flex-row flex-col items-center">
+        <div className=" h-full overflow-hidden card_wrapper w-[100%] flex justify-start lg:items-start lg:flex-row flex-col items-center">
           <div
             onClick={handleFilterVisibility}
             className={`secondPage_animation_fade_up transition-all duration-100 ease-in-out !fixed top-0 ${filterVisibilityClass}  md:translate-x-0 bg-[#030528] opacity-50  w-full h-full z-[200] md:hidden`}
           ></div>
-          <div className="parent_filter  md:w-[90%] lg:w-[20%] sm:w-[50vw] w-[80vw] ">
+          <div className="parent_filter h-full  md:w-[90%] lg:w-[20%] sm:w-[50vw] w-[80vw]  z-[300]">
             <div
               id="filterer"
-              className={` secondPage_animation_fade_up transition-all duration-300 ease-in-out  ${filterVisibilityClass} md:translate-x-0   md:my-9  m-2 my-14 lg:my-4 rounded-lg bg-[#0A1033]  md:relative z-[200] flex md:justify-center md:items-center p-5  flex-wrap break-words shadow-2xl shadow-black w-full`}
+              className={` secondPage_animation_fade_up transition-all duration-300 ease-in-out  ${filterVisibilityClass} md:translate-x-0   md:my-9  m-2 my-14 lg:my-4 rounded-lg bg-[#0A1033]  md:relative flex md:justify-center md:items-center p-5  flex-wrap break-words shadow-2xl shadow-black w-full`}
             >
               <div className="break-words w-full lg:justify-normal lg:block justify-normal block md:flex md:justify-center md:flex-col ">
                 <h2 className="text-2xl font-semibold text-white text-center">

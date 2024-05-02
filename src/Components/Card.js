@@ -43,7 +43,7 @@ function Card(props) {
           ref={cardRef}
           className=" opacity-100 single_card_wrapper hover:scale-95 transition-all  ease-in-out duration-150   bg-[#0A1033]  rounded-lg m-3 overflow-hidden  h-[400px]   w-[300px] relative shadow-lg shadow-slate-500  "
         >
-          <div>
+          <div className="p-2">
             <Swiper
               spaceBetween={30}
               centeredSlides={true}

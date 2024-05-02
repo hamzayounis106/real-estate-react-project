@@ -15,10 +15,10 @@ function Main() {
       duration: 0.5,
     });
     tl.from(".myHeading1 .char", {
-      duration: 0.2,
-      y: -300,
+      duration: 0.1,
+      x: 10,
       opacity: 0,
-      stagger: 0.1,
+      stagger: 0.05,
     });
 
     tl.from(".fadeIn", {
@@ -26,22 +26,22 @@ function Main() {
       // y: -200,
       scale: 0.5,
       opacity: 0,
-      stagger: 0.1,
+      stagger: 0.05,
       yoyo: true,
     });
     tl.from(".button_dropdrown_animation", {
       y: 200,
-      stagger: 0,
+      stagger: 0.1,
       opacity: 0,
       duration: 0.5,
     });
-    tl.from(".button_text_animation .char", {
-      duration: 0.2,
-      y: 300,
-      opacity: 0,
-      stagger: 0.1,
+    // tl.from(".button_text_animation", {
+    //   duration: 0.2,
+    //   y: 220,
+    //   opacity: 0,
+    //   stagger: 0.1,
   
-    });
+    // });
   }, []);
   return (
     <>
@@ -87,7 +87,7 @@ function Main() {
               <div className="button_dropdrown_animation">
                 <Link
                   to="/services"
-                  className="lg:text-[18px] font-[400] text-[#f1f0f0] hover:bg-[#9720209a] hover:translate-y-2 transition-transform duration-500 ease bg-[#972020] px-8 py-1 pb-[5px] rounded-[7px]  button_dropdrown_animation button_text_animation"
+                  className="lg:text-[18px] font-[400] text-[#f1f0f0] hover:bg-[#9720209a] hover:translate-y-2 transition-transform duration-500 ease bg-[#972020] px-8 py-1 pb-[5px] rounded-[7px]   button_text_animation"
                 >
                   <SplitText text="Services" />
                 </Link>

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
@@ -9,7 +9,6 @@ import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Services from "./Components/Services";
 import { Routes, Route } from "react-router-dom";
-
 function App() {
   const location = useLocation();
 

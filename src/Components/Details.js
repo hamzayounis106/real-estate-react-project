@@ -38,7 +38,7 @@ export default function App() {
   return (
     <>
       <div className="bg-[#0A1033]  h-[100%] flex justify-center items-center flex-col overflow-hidden">
-        <div className="h-[15vh] flex justify-start items-stretch">
+        <div className="h-[15vh] flex justify-start items-stretch mt-3">
           <Link to="/" className="footer_logo">
             <img
               src={
@@ -50,7 +50,7 @@ export default function App() {
           </Link>
         </div>
         <div className="flex justify-center items-center  ">
-          <div className="details_images_gallery w-[100vw] h-[80vh] rounded-sm  bg-[#ffffff] flex justify-center items-center flex-col">
+          <div className="details_images_gallery w-[100vw]  h-[60vh] sm:h-[80vh] rounded-sm  bg-[#ffffff] flex justify-center items-center flex-col">
             
             <Swiper
               style={{
@@ -91,7 +91,7 @@ export default function App() {
             </Swiper>
           </div>
         </div>
-        <div className="description w-[80%] p-[20px] my-2 ">
+        <div className="description w-[80%] p-2 sm:p-[20px] my-4 sm:my-2 ">
           <h2 className="text-2xl font-medium text-white">Pricing:</h2>
           <p className="text-1xl  text-white mt-1"> {state.pricingP}</p>
           <h2 className="text-2xl font-medium text-white">Address:</h2>

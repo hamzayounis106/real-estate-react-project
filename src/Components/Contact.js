@@ -43,7 +43,7 @@ function Contact() {
     })
 
     tl.from(".scroll_down_footer_item", {
-      delay: 0.5,
+      delay: 0.3,
       duration: 0.7,
       stagger: 0.1,
       y:200,

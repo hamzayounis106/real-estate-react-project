@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React,{useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./Components/Header";
 import Main from "./Components/Main";
@@ -11,10 +11,12 @@ import Services from "./Components/Services";
 import { Routes, Route } from "react-router-dom";
 function App() {
   const location = useLocation();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <>
-      <div className="wrapper_main h-full">
+      <div className="h-full wrapper_main">
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />

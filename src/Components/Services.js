@@ -266,7 +266,7 @@ function Services() {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center gap-y-3 gap-x-6 sm:gap-9 mt-4 flex-wrap">
+            <div className="flex flex-wrap justify-center mt-4 gap-y-3 gap-x-6 sm:gap-9">
               <div className="button_dropdrown_animation hero_button">
                 <a
                   href="#servces"
@@ -292,7 +292,7 @@ function Services() {
             <SwiperSlide>
               <div className="  flex  justify-center items-center w-[100%] overflow-hidden rounded-md">
                 <img
-                  alt=""
+                  alt="" loading="lazy"
                   className="w-[100%] rounded-md "
                   src={`./Images/Service_Banner_images/1.webp`}
                 />
@@ -301,7 +301,7 @@ function Services() {
             <SwiperSlide>
               <div className="  flex  justify-center items-center w-[100%] overflow-hidden rounded-md">
                 <img
-                  alt=""
+                  alt="" loading="lazy"
                   className="w-[100%] rounded-md "
                   src={`./Images/Service_Banner_images/2.webp`}
                 />
@@ -310,7 +310,7 @@ function Services() {
             <SwiperSlide>
               <div className="  flex  justify-center items-center w-[100%] overflow-hidden rounded-md">
                 <img
-                  alt=""
+                  alt="" loading="lazy"
                   className="w-[100%] rounded-md "
                   src={`./Images/Service_Banner_images/3.webp`}
                 />
@@ -319,7 +319,7 @@ function Services() {
             <SwiperSlide>
               <div className="  flex  justify-center items-center w-[100%] overflow-hidden rounded-md">
                 <img
-                  alt=""
+                  alt="" loading="lazy"
                   className="w-[100%] rounded-md "
                   src={`./Images/Service_Banner_images/4.webp`}
                 />
@@ -438,12 +438,12 @@ function Services() {
       {/* </Suspense> */}
       <div
         id="service_footer"
-        className=" relative w-full flex justify-center items-center  mt-6 my-20 sm:my-20 "
+        className="relative flex items-center justify-center w-full my-20 mt-6 sm:my-20"
       >
-        <div className="flex flex-col justify-evenly items-center text-center ">
+        <div className="flex flex-col items-center text-center justify-evenly ">
           <div className="w-[70%]">
             <div className="serviceFoter_top_scrol">
-              <p className="text-zinc-900 text-center text-xl mb-10">
+              <p className="mb-10 text-xl text-center text-zinc-900">
                 Experience convenience at your fingertips. Contact us today and
                 let's elevate your home living together.
               </p>

@@ -68,7 +68,7 @@ function Main() {
             />
             <div>
               <h2
-                data-splitting
+              
                 className=" myHeading1 split_heading lg:text-4xl md:text-[1.8rem] font-bold text-[#ffffff] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]"
               >
                 <SplitText text="Find Your Dream Home" />

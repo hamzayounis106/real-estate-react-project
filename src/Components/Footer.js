@@ -19,8 +19,8 @@ function Footer() {
           <div className="w-full sm:w-[50%] flex flex-col justify-between items-center sm:justify-start">
             <Link to="/" className="footer_logo" >
               <img
-                src="https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-                className="max-w-[130px] w-full h-auto sm:max-w-[160px] lg:max-w-[200px] "
+                src="./theBunters.png"
+                className="max-w-[130px] w-full h-auto sm:max-w-[160px] lg:max-w-[160px] "
               />
             </Link>
             <p className="footer_text text-[12px] text-white  text-center my-2 sm:text-[13px] sm:px-2 lg:text-[1.1rem]">
@@ -83,9 +83,6 @@ function Footer() {
               </li>
               <li className="sm:pl-1 sm:pr-0">
                 <Link to="/Rent">Rent</Link>
-              </li>
-              <li className="sm:pl-1 sm:pr-0">
-                <Link to="/About">About</Link>
               </li>
               <li className="sm:pl-1 sm:pr-0">
                 <Link to="/Contact">Contact</Link>

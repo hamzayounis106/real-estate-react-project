@@ -35,31 +35,29 @@ function Contact() {
   };
   useEffect(() => {
     let tl = gsap.timeline();
-    tl.from(".slide_left",{
+    tl.from(".slide_left", {
       duration: 1,
       x: -200,
       opacity: 0,
-
-    })
+    });
 
     tl.from(".scroll_down_footer_item", {
       delay: 0.3,
       duration: 0.7,
       stagger: 0.1,
-      y:200,
+      y: 200,
       opacity: 0,
     });
-    tl.from(".slide_from_left",{
+    tl.from(".slide_from_left", {
       duration: 1,
       x: 200,
       opacity: 0,
-
-    })
+    });
   }, []);
   return (
     <>
       <div className="flex items-center justify-between w-full h-screen overflow-hidden row lg:justify-stretch">
-        <div className= " slide_left relative xl:w-[40%] lg:w-[50%] md:w-[40%] sm:w-[40%] xs:w-[50%] w-[100%] bg-zinc-950 h-full xs:rounded-r-full flex flex-col justify-center items-center z-[100] ">
+        <div className=" slide_left relative xl:w-[40%] lg:w-[50%] md:w-[40%] sm:w-[40%] xs:w-[50%] w-[100%] bg-zinc-950 h-full xs:rounded-r-full flex flex-col justify-center items-center z-[100] ">
           <div className="absolute inset-0 top-0 flex flex-col items-center object-cover text-center bg-top bg-no-repeat bg-cover xs:rounded-r-full sm:h-screen justify-evenly bg_image_header">
             <div className="absolute inset-0 object-cover  sm:h-screen   top-0 flex flex-col justify-evenly items-center xs:rounded-r-full  text-center  bg-center bg-cover  bg-[#030528] opacity-80"></div>
           </div>
@@ -69,101 +67,106 @@ function Contact() {
                 <Link to="/" className="footer_logo">
                   <img
                     alt=""
-                    src="https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-                    className="max-w-[130px] w-full h-auto sm:max-w-[160px] lg:max-w-[250px] "
+                    src="./theBunters.png"
+                    className="max-w-[110px] w-full h-auto sm:max-w-[160px] lg:max-w-[250px] "
                   />
                 </Link>
               </div>
               <div className="flex items-center justify-center w-full h-[60vh] px-4 xs:hidden slide_from_left">
-          {isSubmitted ? (
-            <p className="text-xl text-white">
-              Thank you for your submission!
-            </p>
-          ) : (
-            <div >
-              <form
-                onSubmit={handleSubmit}
-                className="p-6 rounded "
-              >
-                <h2 className="py-2 sm:text-[1.1rem] md:text-[1.3rem] lg:text-2xl font-medium text-white">
-                  We want to hear from you!
-                </h2>
-                <div className="flex space-x-4">
-                  <input
-                    type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    onChange={handleChange}
-                    required
-                    className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
-                  />
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    onChange={handleChange}
-                    required
-                    className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
-                  />
-                </div>
-                <div className="flex mt-4 space-x-4 ">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    onChange={handleChange}
-                    required
-                    className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
-                  />
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Phone Number"
-                    onChange={handleChange}
-                    required
-                    className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
-                  />
-                </div>
-                <div className="mt-4">
-                  <select
-                    name="reason"
-                    onChange={handleChange}
-                    required
-                    className="w-full p-2 rounded shadow-sm text-[0.8rem] sm:text-[1.05rem]"
-                  >
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Wall Painting Service">
-                      Wall Painting Service
-                    </option>
-                    <option value="Electric Service">Electric Service</option>
-                    <option value="Plumbing Service">Plumbing Service</option>
-                    <option value="Internet & Cable Service">
-                      Internet & Cable Service
-                    </option>
-                    <option value="Transport Service">Transport Service</option>
-                    {/* Add more options here */}
-                  </select>
-                </div>
-                <div className="mt-4">
-                  <textarea
-                    name="message"
-                    placeholder="Your message"
-                    onChange={handleChange}
-                    required
-                    className="w-full p-2 rounded shadow-sm text-[0.8rem] sm:text-[1.05rem]"
-                    rows={5}
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="px-4 py-2 mt-4 text-white bg-blue-500 rounded shadow-sm xs:text-[1.05rem]"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          )}
-        </div>
+                {isSubmitted ? (
+                  <p className="text-xl text-white">
+                    Thank you for your submission!
+                  </p>
+                ) : (
+                  <div>
+                    <form onSubmit={handleSubmit} className="p-6 rounded ">
+                      <h2 className="py-2 sm:text-[1.1rem] md:text-[1.3rem] lg:text-2xl font-medium text-white">
+                        We want to hear from you!
+                      </h2>
+                      <div className="flex space-x-4">
+                        <input
+                          type="text"
+                          name="firstName"
+                          placeholder="First Name"
+                          onChange={handleChange}
+                          required
+                          className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
+                        />
+                        <input
+                          type="text"
+                          name="lastName"
+                          placeholder="Last Name"
+                          onChange={handleChange}
+                          required
+                          className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
+                        />
+                      </div>
+                      <div className="flex mt-4 space-x-4 ">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          onChange={handleChange}
+                          required
+                          className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
+                        />
+                        <input
+                          type="tel"
+                          name="phoneNumber"
+                          placeholder="Phone Number"
+                          onChange={handleChange}
+                          required
+                          className="w-[50%] p-2 rounded shadow-sm  text-[0.8rem] sm:text-[1.05rem]"
+                        />
+                      </div>
+                      <div className="mt-4">
+                        <select
+                          name="reason"
+                          onChange={handleChange}
+                          required
+                          className="w-full p-2 rounded shadow-sm text-[0.8rem] sm:text-[1.05rem]"
+                        >
+                          <option value="General Inquiry">
+                            General Inquiry
+                          </option>
+                          <option value="Wall Painting Service">
+                            Wall Painting Service
+                          </option>
+                          <option value="Electric Service">
+                            Electric Service
+                          </option>
+                          <option value="Plumbing Service">
+                            Plumbing Service
+                          </option>
+                          <option value="Internet & Cable Service">
+                            Internet & Cable Service
+                          </option>
+                          <option value="Transport Service">
+                            Transport Service
+                          </option>
+                          {/* Add more options here */}
+                        </select>
+                      </div>
+                      <div className="mt-4">
+                        <textarea
+                          name="message"
+                          placeholder="Your message"
+                          onChange={handleChange}
+                          required
+                          className="w-full p-2 rounded shadow-sm text-[0.8rem] sm:text-[1.05rem]"
+                          rows={5}
+                        ></textarea>
+                      </div>
+                      <button
+                        type="submit"
+                        className="px-4 py-2 mt-4 text-white bg-blue-500 rounded shadow-sm xs:text-[1.05rem]"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                )}
+              </div>
               <div className="w-[90%]  flex flex-col justify-between items-center sm:justify-start scroll_down_footer_item">
                 <div className="flex items-center justify-center gap-1 mt-1 rounded-md cursor-pointer ">
                   <div className="text-[#fff] lg:text-2xl ">
@@ -257,7 +260,7 @@ function Contact() {
               Thank you for your submission!
             </p>
           ) : (
-            <div >
+            <div>
               <form
                 onSubmit={handleSubmit}
                 className="p-6 xs:w-[99%] sm:w-[90%] lg:w-[100%] rounded shadow-sm shadow-[#030528]"
@@ -343,7 +346,7 @@ function Contact() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Contact;

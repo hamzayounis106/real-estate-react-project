@@ -41,11 +41,9 @@ export default function App() {
         <div className="h-[15vh] flex justify-start items-stretch mt-3">
           <Link to="/" className="footer_logo">
             <img
-              src={
-                "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-              }
+             src="./theBunters.png"
               alt="logo"
-              className="max-w-[180px] p-3 w-full h-auto "
+              className="max-w-[210px] p-3 w-full h-auto "
             />
           </Link>
         </div>

@@ -9,7 +9,7 @@ function Main() {
     let tl = gsap.timeline();
     tl.from(".dropdrown_animation", {
       y: -200,
-      delay:0.5,
+      delay: 0.5,
       stagger: 0.3,
       opacity: 0,
       duration: 0.5,
@@ -40,7 +40,7 @@ function Main() {
     //   y: 220,
     //   opacity: 0,
     //   stagger: 0.1,
-  
+
     // });
   }, []);
   return (
@@ -49,28 +49,21 @@ function Main() {
         <div className="   hidden md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen bg-zinc-950 bg-center bg-cover bg_image_buy  md:flex flex-col justify-evenly items-center ">
           <div className=" hidden md:flex  md:w-[40%] lg:w-6/12 h-[100%] sm:h-screen  absolute top-0text-center  bg-center bg-cover z-40 bg-[#030528] opacity-70"></div>
           <img
-            src={
-              "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-            }
+          src="./theBunters.png"
             alt="logo"
-            className=" logo dropdrown_animation lg:max-w-[290px] md:max-w-[240px] w-full h-auto absolute z-[700]"
+            className=" logo dropdrown_animation lg:max-w-[240px] md:max-w-[240px] w-full h-auto absolute z-[700]"
           />
         </div>
         <div className=" flex  justify-center w-full md:w-[60%] lg:w-6/12 h-[100%] sm:h-screen bg-zinc-350 bg-center bg-cover bg_image_rent">
           <div className=" w-full  md:w-[60%]  lg:w-6/12 h-[100%] sm:h-screen  absolute top-0 flex flex-col justify-evenly items-center text-center  bg-center bg-cover bg-[#030528] opacity-80 md:opacity-100"></div>
           <div className="absolute z-40 flex justify-evenly sm:justify-center items-center h-[100%] sm:h-screen w-[98%] sm:w-[90%]  md:w-[60%] lg:w-6/12 flex-col px-10">
             <img
-              src={
-                "https://03cd05-a7.myshopify.com/cdn/shop/files/Logo_REFRESH_TRANS_BG_WHT_TXT_1.png?v=1710098752"
-              }
+              src="./theBunters.png"
               alt="logo"
-              className=" md:hidden max-w-[200px] lg:max-w-[290px] md:max-w-[240px] w-full h-auto sm:mb-6 "
+              className=" md:hidden max-w-[120px] lg:max-w-[290px] md:max-w-[240px] w-full h-auto sm:mb-6 "
             />
             <div>
-              <h2
-              
-                className=" myHeading1 split_heading lg:text-4xl md:text-[1.8rem] font-bold text-[#ffffff] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]"
-              >
+              <h2 className=" myHeading1 split_heading lg:text-4xl md:text-[1.8rem] font-bold text-[#ffffff] text-center lg:mb-4 md:mb-2 sm:text-xl text-[1.4rem]">
                 <SplitText text="Find Your Dream Home" />
               </h2>
               <p className="lg:text-2xl sm:text-xl text-[1.2rem] font-light text-[#c7d3e2] text-center myHeading1 ">
